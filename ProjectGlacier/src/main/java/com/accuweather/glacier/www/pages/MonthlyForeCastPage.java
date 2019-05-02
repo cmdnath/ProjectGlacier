@@ -18,11 +18,22 @@ private By byListViewIcon = By.cssSelector("div.page-column-1 > div.monthly-tool
 private By byListViewEntireMonthDayRows = By.cssSelector("div.two-column-page-content > div.page-column-1 > div.monthly-component");
 
 /*
- * Method to click Month tab on the AccuWeather Landing page
+ * Method to click Month tab on the AW Monthly Forecast page
  */
 public void clickOnMethodTab() {
 	WebPageLoaded.isDomInteractive();
 	WebElement methodtab = getDriver().findElement(byMonthTab);
+	methodtab.syncVisible(15);
+	methodtab.hover();
+	methodtab.click();
+	}
+
+/*
+ * Method to click On Right Arrow on the AW Monthly Forecast page
+ */
+public void clickOnRightArrowLink() {
+	WebPageLoaded.isDomInteractive();
+	WebElement methodtab = getDriver().findElement(byListViewRightArrow);
 	methodtab.syncVisible(15);
 	methodtab.hover();
 	methodtab.click();
