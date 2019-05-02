@@ -111,7 +111,7 @@ public class WebPageLoaded {
      * finished loading. It will wait for the ready state to be either
      * 'interactive' or 'complete'.
      *
-     * @deprecated user vresio without driver call
+     * @deprecated user version without driver call
      * @version 12/16/2014
      * @author Jessica Marshall
      * @return False if the element is not found after the timeout, true if is
