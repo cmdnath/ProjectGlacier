@@ -17,4 +17,5 @@ public class AccuweatherRest {
     public static DailyForecasts dailyforecasts() {
         return new DailyForecasts();
     }
+    
 }
