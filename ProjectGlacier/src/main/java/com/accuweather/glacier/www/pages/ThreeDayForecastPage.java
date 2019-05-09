@@ -56,6 +56,8 @@ public class ThreeDayForecastPage extends BasePage {
 	 * 
 	 */
 	
+	// 3day class files
+	
 	public void searchbyLocation(){
 	
 	}
