@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -107,4 +108,153 @@ public class SimpleDate {
     public int compareCalendarTo(Calendar calendar) {
         return this.calendar.compareTo(calendar);
     }
+    
+    /**@author HFARAZ
+     * Method to get the hour
+     * */
+    public int getHour() 
+    {
+    	Date date = new Date();
+		calendar.setTime(date);
+		return calendar.get(Calendar.HOUR_OF_DAY);
+    }
+    
+    /**@author HFARAZ
+     * Method to get the minutes
+     * */
+    public int getMinute() 
+    {
+    	Date date = new Date();
+		calendar.setTime(date);
+		return calendar.get(Calendar.HOUR_OF_DAY);
+    }
+    
+    /**
+     * @author HFARAZ
+     * */
+    public static String getCurrentDate(String format)
+    {
+    	Date date = new Date();
+    	return new SimpleDateFormat(format).format(date);    	
+    }
+    
+    /**
+     * @author HFARAZ
+     * Method to get the current day of the week
+     * */
+    public String getCurrentDay()
+    {
+    	int today = calendar.get(Calendar.DAY_OF_WEEK);
+    	String dayOfTheWeek="";
+
+    	switch (today) {
+    	    case Calendar.SUNDAY:
+    	        dayOfTheWeek="SUNDAY";
+    	        break;
+    	    case Calendar.MONDAY:
+    	    	dayOfTheWeek="MONDAY";
+    	        break;
+    	    case Calendar.TUESDAY:
+    	    	dayOfTheWeek="TUESDAY";
+    	        break;
+    	    case Calendar.WEDNESDAY:
+    	    	dayOfTheWeek="WEDNESDAY";
+    	        break;
+    	    case Calendar.THURSDAY:
+    	    	dayOfTheWeek="THURSDAY";
+    	        break;
+    	    case Calendar.FRIDAY:
+    	    	dayOfTheWeek="FRIDAY";
+    	        break;
+    	    case Calendar.SATURDAY:
+    	    	dayOfTheWeek="SATURDAY";
+    	        break;
+    	}
+    	return dayOfTheWeek;
+    }
+    
+    /**
+     * @author HFARAZ
+     * Method to get the tomorrow's day
+     * */
+    public String getTomorrowsDay()
+    {
+    	int today = calendar.get(Calendar.DAY_OF_WEEK);
+    	int tomorrow = today+1;
+    	String dayOfTheWeek="";
+
+    	switch (tomorrow) {
+    	    case Calendar.SUNDAY:
+    	        dayOfTheWeek="SUNDAY";
+    	        break;
+    	    case Calendar.MONDAY:
+    	    	dayOfTheWeek="MONDAY";
+    	        break;
+    	    case Calendar.TUESDAY:
+    	    	dayOfTheWeek="TUESDAY";
+    	        break;
+    	    case Calendar.WEDNESDAY:
+    	    	dayOfTheWeek="WEDNESDAY";
+    	        break;
+    	    case Calendar.THURSDAY:
+    	    	dayOfTheWeek="THURSDAY";
+    	        break;
+    	    case Calendar.FRIDAY:
+    	    	dayOfTheWeek="FRIDAY";
+    	        break;
+    	    case Calendar.SATURDAY:
+    	    	dayOfTheWeek="SATURDAY";
+    	        break;
+    	}
+    	return dayOfTheWeek;
+    }
+    
+    /**
+     * @author HFARAZ
+     * Method to get the tomorrow's day
+     * */
+    public String getDayAfterTomorrowsDay()
+    {
+    	int today = calendar.get(Calendar.DAY_OF_WEEK);
+    	int dayAfterTomorrow = today+2;
+    	String dayOfTheWeek="";
+
+    	switch (dayAfterTomorrow) {
+    	    case Calendar.SUNDAY:
+    	        dayOfTheWeek="SUNDAY";
+    	        break;
+    	    case Calendar.MONDAY:
+    	    	dayOfTheWeek="MONDAY";
+    	        break;
+    	    case Calendar.TUESDAY:
+    	    	dayOfTheWeek="TUESDAY";
+    	        break;
+    	    case Calendar.WEDNESDAY:
+    	    	dayOfTheWeek="WEDNESDAY";
+    	        break;
+    	    case Calendar.THURSDAY:
+    	    	dayOfTheWeek="THURSDAY";
+    	        break;
+    	    case Calendar.FRIDAY:
+    	    	dayOfTheWeek="FRIDAY";
+    	        break;
+    	    case Calendar.SATURDAY:
+    	    	dayOfTheWeek="SATURDAY";
+    	        break;
+    	}
+    	return dayOfTheWeek;
+    }
+    
+    public static void testTime()
+    {
+    	Date date = new Date();
+    	Calendar c = GregorianCalendar.getInstance();
+    	c.setTime(date);
+    	System.out.println(c.getTime());
+    }
+    
+    public static void main(String[] args) {
+		testTime();
+		
+	}
 }

@@ -11,13 +11,14 @@ import com.chameleon.api.restServices.RestResponse;
 import com.chameleon.api.restServices.RestService;
 
 public class BaseAPI {
-    //private final static String QA_URL = "http://qa-accuweather-api-northcentral-us.cloudapp.net/";
+    private final static String QA_URL = "http://qa-accuweather-api-northcentral-us.cloudapp.net/";
     //private final static String QA_URL = "http://api.accuweather.com/";
 	//private final static String PROD_URL = "http://api.accuweather.com/";
-	 private final static String QA_URL = "https://glacier-dev1.accuweather.com/";
+	 //private final static String QA_URL = "https://glacier-dev1.accuweather.com/";
     private final static String PROD_URL = "https://glacier-dev1.accuweather.com/";
     
-    private final static String KEY = "16803";
+    //private final static String KEY = "16803";
+    private final static String KEY = "5251445912b143d8b4bee5a741762dd1";
     private ThreadLocal<String> language = ThreadLocal.withInitial(() -> "en-us");
     private ThreadLocal<Boolean> includeDetails = ThreadLocal.withInitial(() -> true);
 
