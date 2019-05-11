@@ -49,6 +49,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		Assert.assertTrue(threeDayForecastPage.weatherCardIsDisplayed("Tomorrow"));
 	}
 	
+	
 	// 3day class files
 
 	@Test(priority = 3)
