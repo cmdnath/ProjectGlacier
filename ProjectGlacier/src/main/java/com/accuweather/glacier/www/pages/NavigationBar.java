@@ -98,22 +98,20 @@ public class NavigationBar extends BasePage {
     
     public void navigateToHomePageByLogo() {
         getDriver().findElement(byLogo).click();
-        //clickVisibleElement(byRadarSubMenu);
+        
         }
     
     public void navigateToSeverWeatherPage() {
         getDriver().findElement(bySevereSubMenu).click();
-        //clickVisibleElement(byRadarSubMenu);
+        
         }
     
     public void navigateToSatellitePage() {
         getDriver().findElement(bySatelliteMapsSubMenu).click();
-        //clickVisibleElement(byRadarSubMenu);
         }
     
     public void navigateToForeCastPage() {
         getDriver().findElement(byForecastMapsSubMenu).click();
-        //clickVisibleElement(byRadarSubMenu);
         }
 
     public void locationSearch(String info) {
@@ -147,8 +145,6 @@ public class NavigationBar extends BasePage {
         txtSuperSearch.set(info);
         txtSuperSearch.sendKeys();
         String CityName = getCityNameText(info);
-        //WebLink link = getDriver().findLink(bySuperSearchCityName);
-        //link.click();
         navigateToForecast();
         return CityName;
     }
