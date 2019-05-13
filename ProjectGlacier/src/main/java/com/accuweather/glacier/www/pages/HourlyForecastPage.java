@@ -3,6 +3,11 @@ package com.accuweather.glacier.www.pages;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -54,8 +59,11 @@ public class HourlyForecastPage extends BasePage {
 	private By byAccuWeatherLogo = By.cssSelector("div.main-menu > div > div.icon-text > a:nth-child(1) > svg.icon-logo");
 	private By byCurrentHourTab = By.cssSelector("div.two-column-page-content > div > div > div > div > div.header-wrapper.card");
 	private By byCurrentHourInfoTab = By.cssSelector("div.two-column-page-content > div > div > div.accordion-item.hourly-forecast-card.hour > div.accordion-item-content > div.hourly-forecast-card-content.hourly-forecast-content");
+	private By byTemperatureAtTheTop = By.cssSelector("div.page-subheader.content-module > div.page-subheader-wrap > div.recent-locations-label > a.recent-location-display > span:nth-child(2)");
+	private By byWeatherIconAtTheTop = By.cssSelector("div.page-subheader.content-module > div.page-subheader-wrap > div.recent-locations-label > a.recent-location-display > img.weather-icon");
 	
 	private static final String ENVIRONMENT_URL_CONFIG_FILE = "EnvironmentURLs.properties";
+	private Calendar calendar = Calendar.getInstance();
 	public static String getEnvironmentUrlConfigFile() {
 		return ENVIRONMENT_URL_CONFIG_FILE;
 	}
@@ -126,6 +134,19 @@ public class HourlyForecastPage extends BasePage {
 		hourlyTab.syncVisible(15);
 		hourlyTab.click();
 	}
+	
+	/**
+	 * Method to get the Hourly tab text
+	 * */
+	public String getHourlyTabText()
+	{
+		WebPageLoaded.isDomInteractive();
+		WebElement hourlyTab = getDriver().findElement(byHourlyForecastPage);
+		hourlyTab.syncVisible(15);
+		
+		return hourlyTab.getText();
+	}
+	
 	
 	/**
 	 * Method to get the time
@@ -367,8 +388,9 @@ public class HourlyForecastPage extends BasePage {
 		WebPageLoaded.isDomInteractive();
 		for (int i=1;i<=24;i++)
 		{
-			WebElement timeTab = getDriver().findElement(By.cssSelector(""))
+			WebElement timeTab = getDriver().findElement(By.cssSelector(""));
 		}
+		return true;
 	}
 	
 	/**
@@ -483,6 +505,16 @@ public class HourlyForecastPage extends BasePage {
 	}
 	
 	/**
+	 * Method to get the color of the text in hour tab
+	 * */
+	public String getColorOfHourComponents()
+	{
+		WebPageLoaded.isDomInteractive();
+		String color = getDriver().findElement(byHourlyForecastPage).getCssValue("border-top-color");
+		return Color.fromString(color).asHex();
+	}
+	
+	/**
 	 * Method to validate day parameter in URL when next CTA is clicked
 	 * */
 	public void validateDayParamInURLForNextDay()
@@ -547,6 +579,84 @@ public class HourlyForecastPage extends BasePage {
 			}
 		}
 	}
+	
+	/**
+	 * Method to click on Weather Icon at the top
+	 * **/
+	public void clickWeatherIconAtTheTop()
+	{
+		WebPageLoaded.isDomInteractive();
 		
+		WebElement weatherIcon = getDriver().findElement(byWeatherIconAtTheTop);
+		weatherIcon.syncVisible(15);
+		
+		weatherIcon.jsClick();	
+	}
+	
+	
+	
+	/**
+	 * Method to click on Temperature at the top
+	 * */
+	public void clickTemperatureIconAtTheTop()
+	{
+		WebPageLoaded.isDomInteractive();
+		
+		WebElement temperatureIcon = getDriver().findElement(byTemperatureAtTheTop);
+		temperatureIcon.syncVisible(15);
+		
+		temperatureIcon.jsClick();
+	}
+	
+	/**
+     * @author HFARAZ
+     * Method to get the tomorrow's day
+     * */
+    public String getNextDay(int pageNo)
+    {
+    	int today = calendar.get(Calendar.DAY_OF_WEEK);
+    	int nextDay = today+pageNo;
+    	String dayOfTheWeek="";
 
+    	switch (nextDay) {
+    	    case Calendar.SUNDAY:
+    	        dayOfTheWeek="SUNDAY";
+    	        break;
+    	    case Calendar.MONDAY:
+    	    	dayOfTheWeek="MONDAY";
+    	        break;
+    	    case Calendar.TUESDAY:
+    	    	dayOfTheWeek="TUESDAY";
+    	        break;
+    	    case Calendar.WEDNESDAY:
+    	    	dayOfTheWeek="WEDNESDAY";
+    	        break;
+    	    case Calendar.THURSDAY:
+    	    	dayOfTheWeek="THURSDAY";
+    	        break;
+    	    case Calendar.FRIDAY:
+    	    	dayOfTheWeek="FRIDAY";
+    	        break;
+    	    case Calendar.SATURDAY:
+    	    	dayOfTheWeek="SATURDAY";
+    	        break;
+    	}
+    	return dayOfTheWeek;
+    }
+    
+    public static void testTime() throws ParseException
+    {
+    	DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
+
+    	Date d1 = df.parse("2012-01-24 10:0:00 AM");
+    	Date d2 = df.parse("2012-01-24 :30:00 PM");
+
+    	int hoursDifference = (int)((d2.getTime() - d1.getTime()) / 3600000L);
+    	System.out.println("Difference in hours: " + hoursDifference);
+    }
+    
+    public static void main(String[] args) throws ParseException {
+		testTime();
+		
+	}
 }
