@@ -1,6 +1,8 @@
 package com.accuweather.glacier.www.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.Color;
+//import org.openqa.selenium.support.Color;
 import org.testng.Assert;
 
 import com.accuweather.glacier.BasePage;
@@ -9,179 +11,301 @@ import com.chameleon.selenium.web.elements.WebElement;
 
 public class ThreeDayForecastPage extends BasePage {
 
-	/*
-	 * 
-	 * locators
-	 * 
-	 */
-	
-	private By bynowTab=By.cssSelector("body > div.template-root > div.page-subnav > div > div > div.subnav-items > a.subnav-item.active");
-	private By bycurrentWeatherCard = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p:nth-child(1)");
-	private By byCurrentWeatherTimeStamp = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p.module-header.sub.date");
-	private By byCurrentWeatherIcon = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > img");
-	private By byCurrentWeatherTemperature = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > div.temp > span");
-	private By byCurrentWeatherRealFeelTemperature = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > div.real-feel");
-	private By byCurrentWeatherDescriptipn = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > div.cond");
-	private By byTodayCard = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > p:nth-child(1)");
-	private By byTodaydate = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > p.module-header.sub.date");
-	private By byTodayWeathericon= By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > img");
-	private By byTodayTemperature=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.temp.has-real-feel > span.high");
-	private By byTodayRealFeelTemprature =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.real-feel");
-	private By byTodayWeatherdescription =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.cond");
-	private By byTodayHighTemperature = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.temp.has-real-feel > span.low");
-	private By byTonightLowTemperatue = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.temp.has-real-feel > span.low");
-	private By byTonight = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > p:nth-child(1)");
-	private By byTonightdate = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > p.module-header.sub.date");
-	private By byTonightWeathericon= By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > img");
-	private By byTonightTemperature=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.temp.has-real-feel > span.high");
-	private By byTonightRealFeelTemprature =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.real-feel");
-	private By byTonightWeatherdescription =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.cond");
-	private By byTomorrow = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > p:nth-child(1)");
-	private By byTomorrowdate = By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > p.module-header.sub.date");
-	private By byTomorrowWeathericon= By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > img");
-	private By byTomorrowTemperature=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp > span.high");
-	private By byTomorrowWeatherdescription =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.cond");
-	private By byAnimationBarForward = By.cssSelector("div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active");  
-	private By byAnimationBarBackward = By.cssSelector("div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2)");
-	private By bynextdayheader =By.cssSelector("div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(1) > div > p:nth-child(1)");
-	private By forwardarrow =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active > svg");
-	private By backarrow =By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2) > svg");
-	private By bynextdayheaderDay =By.cssSelector("div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(1) > div > p:nth-child(1)");
-	private By bynextdayheaderDate=By.cssSelector("div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(1) > div > p.module-header.sub.date");
-	
-	/*
-	 * 
-	 * Methods
-	 *
-	 * 
-	 */
-	
-	// 3day class files
-	
-	public void searchbyLocation(){
-	
-	}
-	
-	public void isNowTabHighlighted() {
+	private By bynowTab = By.cssSelector(
+			"body > div.template-root > div.page-subnav > div > div > div.subnav-items > a.subnav-item.active");
+	private By bycurrentWeatherCard = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p:nth-child(1)");
+	private By byCurrentWeatherTimeStamp = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p.module-header.sub.date");
+	private By byCurrentWeatherIcon = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > img");
+	private By byCurrentWeatherTemperature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > div.temp > span");
+	private By byCurrentWeatherRealFeelTemperature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > div.real-feel");
+	private By byCurrentWeatherDescription = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > div.cond");
+	private By byCurrentweatherwholecard = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current");
+	private By byTodayCard = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > p:nth-child(1)");
+	private By byTodaydate = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > p.module-header.sub.date");
+	private By byTodayWeathericon = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > img");
+	private By byTodayTemperature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.temp.has-real-feel > span.high");
+	private By byTodayRealFeelTemprature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.real-feel");
+	private By byTodayWeatherdescription = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.cond");
+	private By byTodayHighTemperature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > div.temp.has-real-feel > span.low");
+	private By byTodaywholecard = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div");
+	private By byTonightLowTemperatue = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.temp.has-real-feel > span.low");
+	private By byTonightcard = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > p:nth-child(1)");
+	private By byTonightdate = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > p.module-header.sub.date");
+	private By byTonightWeathericon = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > img");
+	private By byTonightTemperature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.temp.has-real-feel > span.high");
+	private By byTonightRealFeelTemprature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.real-feel");
+	private By byTonightWeatherdescription = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > div.cond");
+	private By byTomorrowcard = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > p:nth-child(1)");
+	private By byTomorrowdate = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > p.module-header.sub.date");
+	private By byTomorrowWeathericon = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > img");
+	private By byTomorrowTemperature = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp > span.high");
+	private By byTomorrowWeatherdescription = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.cond");
+	private By byAnimationBarForward = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active > svg");
+	private By byAnimationBarBackward = By.cssSelector(
+			"div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2)");
+	private By bynextdayheader = By.cssSelector(
+			"div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(1) > div > p:nth-child(1)");
+	private By forwardarrow = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active > svg");
+	private By fourweathercards = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll");
+	private By currentweathertext = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current.reverse > div > p:nth-child(1)");
+	private By backarrow = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2) > svg");
+	private By forwadarrowhighlighted = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active > svg > path");
+	private By nextdayforecast = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width");
+	private By backarrowhighlighted = By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2) > svg > path");
+
+	public void isnowTabHighlighted() {
 		WebPageLoaded.isDomInteractive();
 		WebElement nowTab = getDriver().findElement(bynowTab);
 		nowTab.syncVisible(15);
 		nowTab.isSelected();
 	}
-	
-	
-	public Boolean weatherCardIsDisplayed(String cardName){
-		
-		if(cardName.equalsIgnoreCase("currentWeather"))
-		{
+
+	public String nowTabcolour() {
 		WebPageLoaded.isDomInteractive();
-		WebElement currentWeatherCard = getDriver().findElement(bycurrentWeatherCard);
-		currentWeatherCard.syncVisible(20);
-		currentWeatherCard.isSelected();
-		return true;
+		String tabcolour = getDriver().findElement(bynowTab).getCssValue("border-top-color");
+		String Actualtabcolour = Color.fromString(tabcolour).asHex();
+		return Actualtabcolour;
+	}
+
+	public Boolean fourWeathercardisDisplayed() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(fourweathercards).isDisplayed();
+	}
+
+	public Boolean currentWeathercardisDisplayed() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(bycurrentWeatherCard).isDisplayed();
+	}
+
+	public Boolean todayWeathercardisDisplayed() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTodayCard).isDisplayed();
+	}
+
+	public Boolean tonightWeathercardisDisplayed() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTonightcard).isDisplayed();
+	}
+
+	public Boolean tomorrowWeathercardisDisplayed() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTomorrowcard).isDisplayed();
+	}
+
+	public String currentWeathercardTitle() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(bycurrentWeatherCard).getText();
+	}
+	public Boolean currentWeathercardTimedisplayed() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byCurrentWeatherTimeStamp).isDisplayed();
+	}
+	public String TodayweathercardTitle() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTodayCard).getText();
+	}
+	public String tonightweathercardTitle() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTonightcard).getText();
+	}
+	public String tomorrowweathercardTitle() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTomorrowcard).getText();
+	}
+	public void isclickedonCurrentWeather() {
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(byCurrentweatherwholecard).click();
+	}
+	public String CurrentWeatherurldisplayed() {
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(byCurrentweatherwholecard).click();
+		return getDriver().getCurrentUrl();
+	}
+	public void isclickedonTodayWeather() {
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(byTodaywholecard).click();
+	}
+	public String todayWeatherurldisplayed() {
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(byTodaywholecard).click();
+		return getDriver().getCurrentUrl();
+	}
+	public void isclickedonTomorrowWeather() {
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(byTomorrowcard).click();
+	}
+	public String tomorrowWeatherurldisplayed() {
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(byTomorrowcard).click();
+		return getDriver().getCurrentUrl();
+	}
+	public Boolean weatherCardIsDisplayed(String cardName) {
+		if (cardName.equalsIgnoreCase("currentWeather")) {
+			WebPageLoaded.isDomInteractive();
+			WebElement currentWeatherCard = getDriver().findElement(bycurrentWeatherCard);
+			currentWeatherCard.syncVisible(20);
+			currentWeatherCard.isSelected();
+			return true;
 		}
-		
-		if(cardName.equalsIgnoreCase("Today"))
-		{
-		WebPageLoaded.isDomInteractive();
-		WebElement TodayCard = getDriver().findElement(byTodayCard);
-		TodayCard.syncVisible(20);
-		TodayCard.isSelected();
-		return true;
+		if (cardName.equalsIgnoreCase("Today")) {
+			WebPageLoaded.isDomInteractive();
+			WebElement TodayCard = getDriver().findElement(byTodayCard);
+			TodayCard.syncVisible(20);
+			TodayCard.isSelected();
+			return true;
 		}
-		
-		
-		if(cardName.equalsIgnoreCase("Tonight"))
-		{
-		WebPageLoaded.isDomInteractive();
-		WebElement TonightCard = getDriver().findElement(byTonight);
-		TonightCard.syncVisible(20);
-		TonightCard.isSelected();
-		return true;
+		if (cardName.equalsIgnoreCase("Tonight")) {
+			WebPageLoaded.isDomInteractive();
+			WebElement TonightCard = getDriver().findElement(byTonightcard);
+			TonightCard.syncVisible(20);
+			TonightCard.isSelected();
+			return true;
 		}
-		
-		
-		if(cardName.equalsIgnoreCase("Tomorrow"))
-		{
-		WebPageLoaded.isDomInteractive();
-		WebElement Tomorrow = getDriver().findElement(byTomorrow);
-		Tomorrow.syncVisible(20);
-		Tomorrow.isSelected();
-		return true;
+		if (cardName.equalsIgnoreCase("Tomorrow")) {
+			WebPageLoaded.isDomInteractive();
+			WebElement Tomorrow = getDriver().findElement(byTomorrowcard);
+			Tomorrow.syncVisible(20);
+			Tomorrow.isSelected();
+			return true;
 		}
 		return false;
 	}
-	
-	
-	public void weatherCardElementsIsDisplayed(String cardName){
+	public boolean weatherCardElementsDetailsDisplayed(String cardName) {
 		WebPageLoaded.isDomInteractive();
-
 		if (cardName.equalsIgnoreCase("Current Weather")) {
 			WebPageLoaded.isDomInteractive();
-			String CurrentWeather = "CURRENT WEATHER";
-			Assert.assertEquals(getDriver().findElement(bycurrentWeatherCard).getText(), CurrentWeather);
-			Assert.assertTrue(getDriver().findElement(byCurrentWeatherTimeStamp).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byCurrentWeatherIcon).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byCurrentWeatherTemperature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byCurrentWeatherRealFeelTemperature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byCurrentWeatherDescriptipn).isDisplayed());
-
+			return getDriver().findElement(bycurrentWeatherCard).isDisplayed();
 		}
-		
+		if (cardName.equalsIgnoreCase("Current Weather Time Stamp")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byCurrentWeatherTimeStamp).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Current Weather Weather Icon")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byCurrentWeatherIcon).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Current Weather Temperature")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byCurrentWeatherTemperature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Current Weather RealFeelTemperature")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byCurrentWeatherRealFeelTemperature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Current Weather Description")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byCurrentWeatherDescription).isDisplayed();
+		}
 		if (cardName.equalsIgnoreCase("Today")) {
 			WebPageLoaded.isDomInteractive();
-			String Today = "TODAY";
-			Assert.assertEquals(getDriver().findElement(byTodayCard).getText(), Today);
-			Assert.assertTrue(getDriver().findElement(byTodaydate).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTodayWeathericon).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTodayTemperature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTodayRealFeelTemprature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTodayWeatherdescription).isDisplayed());
-
+			return getDriver().findElement(byTodayCard).isDisplayed();
 		}
-		
-		if (cardName.equalsIgnoreCase("Tonight")) {
+		if (cardName.equalsIgnoreCase("Current date")) {
 			WebPageLoaded.isDomInteractive();
-			String Tonight = "TONIGHT";
-			Assert.assertEquals(getDriver().findElement(byTonight).getText(), Tonight);
-			Assert.assertTrue(getDriver().findElement(byTonightdate).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTonightWeathericon).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTonightTemperature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTonightRealFeelTemprature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTonightWeatherdescription).isDisplayed());
-
+			return getDriver().findElement(byTodaydate).isDisplayed();
 		}
-		
-		
-		if (cardName.equalsIgnoreCase("Tomorrow")) {
+		if (cardName.equalsIgnoreCase("Today Weather icon")) {
 			WebPageLoaded.isDomInteractive();
-			String Tomorrow = "TOMORROW";
-			Assert.assertEquals(getDriver().findElement(byTomorrow).getText(),Tomorrow);
-			Assert.assertTrue(getDriver().findElement(byTomorrowdate).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTomorrowWeathericon).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTomorrowTemperature).isDisplayed());
-			Assert.assertTrue(getDriver().findElement(byTomorrowWeatherdescription).isDisplayed());
-
+			return getDriver().findElement(byTodayWeathericon).isDisplayed();
 		}
-}
-	
-	
-	
-	public void navigatingToCurrentWeatherLocationKeyPage(String weathercard ){
+		if (cardName.equalsIgnoreCase("Today High Temperature")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTodayTemperature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Today RealFeelTemperature with trademark")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTodayRealFeelTemprature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Today Weather Description")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTodayWeatherdescription).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tonight Current date")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTonightdate).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tonight Weather icon")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTonightWeathericon).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tonight Low Temperature")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTonightTemperature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tonight RealFeelTemperature with trademark")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTonightRealFeelTemprature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tonight Weather Description")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTonightWeatherdescription).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tomorrow Current date")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTomorrowdate).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tomorrow  Weather icon")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTomorrowWeathericon).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tomorrow High and Low Temperature")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTomorrowTemperature).isDisplayed();
+		}
+		if (cardName.equalsIgnoreCase("Tomorrow  Weather Description")) {
+			WebPageLoaded.isDomInteractive();
+			return getDriver().findElement(byTomorrowWeatherdescription).isDisplayed();
+		}
+		return false;
+	}
+	public void navigatingtoappropriateweatherpage(String weathercard) {
 		if (weathercard.equalsIgnoreCase("current weather")) {
 			WebPageLoaded.isDomInteractive();
 			WebElement currentWeatherCard = getDriver().findElement(bycurrentWeatherCard);
 			currentWeatherCard.click();
 			WebPageLoaded.isDomInteractive();
-			String Expectedurl = "https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
+			String Expectedurl = "https://qualityassurance.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
 			WebPageLoaded.isDomInteractive();
 			String actualUrl = getDriver().getCurrentUrl();
 			WebPageLoaded.isDomInteractive();
 			Assert.assertEquals(actualUrl, Expectedurl);
-
 		}
-		
-		else if(weathercard.equalsIgnoreCase("Today")){
+		else if (weathercard.equalsIgnoreCase("Today")) {
 			WebPageLoaded.isDomInteractive();
 			WebElement currentWeatherCard = getDriver().findElement(byTodayCard);
 			currentWeatherCard.click();
@@ -191,12 +315,10 @@ public class ThreeDayForecastPage extends BasePage {
 			String actualUrl = getDriver().getCurrentUrl();
 			WebPageLoaded.isDomInteractive();
 			Assert.assertEquals(actualUrl, Expectedurl);
-
 		}
-		
-		else if(weathercard.equalsIgnoreCase("Tonight")){
+		else if (weathercard.equalsIgnoreCase("Tonight")) {
 			WebPageLoaded.isDomInteractive();
-			WebElement currentWeatherCard = getDriver().findElement(byTonight);
+			WebElement currentWeatherCard = getDriver().findElement(byTonightcard);
 			currentWeatherCard.click();
 			WebPageLoaded.isDomInteractive();
 			String Expectedurl = "https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
@@ -204,12 +326,10 @@ public class ThreeDayForecastPage extends BasePage {
 			String actualUrl = getDriver().getCurrentUrl();
 			WebPageLoaded.isDomInteractive();
 			Assert.assertEquals(actualUrl, Expectedurl);
-
 		}
-		
-		else if(weathercard.equalsIgnoreCase("tomorrow")){
+		else if (weathercard.equalsIgnoreCase("tomorrow")) {
 			WebPageLoaded.isDomInteractive();
-			WebElement currentWeatherCard = getDriver().findElement(byTomorrow);
+			WebElement currentWeatherCard = getDriver().findElement(byTomorrowcard);
 			currentWeatherCard.click();
 			WebPageLoaded.isDomInteractive();
 			String Expectedurl = "https://development.accuweather.com/en/us/state-college/16801/daily-weather-forecast/6787_pc?day=1";
@@ -217,96 +337,61 @@ public class ThreeDayForecastPage extends BasePage {
 			String actualUrl = getDriver().getCurrentUrl();
 			WebPageLoaded.isDomInteractive();
 			Assert.assertEquals(actualUrl, Expectedurl);
-
 		}
-		
-	
 	}
-	
-	
 	public void todayWeatherMax_hiTemperature() {
 		WebPageLoaded.isDomInteractive();
 		WebElement TodayHighTemperature = getDriver().findElement(byTodayHighTemperature);
 		Assert.assertTrue(TodayHighTemperature.isDisplayed());
-		
 	}
-	
 	public void tonightWeatherMin_loTemperature() {
-
 		WebPageLoaded.isDomInteractive();
 		WebElement TonightLowTemperatue = getDriver().findElement(byTonightLowTemperatue);
 		Assert.assertTrue(TonightLowTemperatue.isDisplayed());
-
 	}
-	
-	
-	
-	
-	public void animationBarForwardarrowActive() {
+	public WebElement animationBarForwardarrow() {
 		WebPageLoaded.isDomInteractive();
-		WebElement AnimationBarForward = getDriver().findElement(byAnimationBarForward);
-		Assert.assertTrue(AnimationBarForward.isEnabled(),"Forward Arrow Active");
-		
+		return getDriver().findElement(byAnimationBarForward);
 	}
-
-	public void animationBarBackwardarrowActive() {
+	public WebElement animationBarBackwardarrow() {
 		WebPageLoaded.isDomInteractive();
-		WebElement AnimationBarBackward = getDriver().findElement(byAnimationBarBackward);
-		Assert.assertTrue(AnimationBarBackward.isEnabled(),"Backward Arrow Active");
-		
+		return getDriver().findElement(byAnimationBarBackward);
 	}
-	
-	public void animationforwardarrowclick()
-	{
-		WebPageLoaded.isDomInteractive();
-		 getDriver().findElement(byAnimationBarForward).click();
-		 
-		
-	}
-	
-	public String Nextfourdaysday()
-	{
+	public void animationforwardarrowclick() {
 		WebPageLoaded.isDomInteractive();
 		getDriver().findElement(byAnimationBarForward).click();
-		String Day= getDriver().findElement(bynextdayheaderDay).getText();
-		return Day;
-		
-		
 	}
-	
-	public String Nextfourdaysdate()
-	{
+	public void animationBackwardarrowclick() {
 		WebPageLoaded.isDomInteractive();
-		getDriver().findElement(byAnimationBarForward).click();
-		String date =getDriver().findElement(bynextdayheaderDate).getText();
-		return date;
+		getDriver().findElement(byAnimationBarBackward).click();
 	}
-
-	public void animationBackwardarrowclick()
-	{
+	public String Backarrowcolour() {
 		WebPageLoaded.isDomInteractive();
-		 getDriver().findElement(byAnimationBarBackward).click();
+		String backarrowcolour = getDriver().findElement(backarrow).getCssValue("fill");
+		String ActualBackarrowcolour = Color.fromString(backarrowcolour).asHex();
+		return ActualBackarrowcolour;
 	}
-
-	public  String Backwardarrowcolour()
-	{
+	public String Backarrowcolour2() {
 		WebPageLoaded.isDomInteractive();
-		String bc = getDriver().findElement(backarrow).getCssValue("fill");
-        return bc;
+		String backarrowcolour = getDriver().findElement(backarrowhighlighted).getCssValue("fill");
+		String ActualBackarrowcolour = Color.fromString(backarrowcolour).asHex();
+		return ActualBackarrowcolour;
 	}
-	
-	public  String Forwardarrowcolour()
-	{
+	public String Forwardarrowcolour() {
 		WebPageLoaded.isDomInteractive();
-		String Forwardarrowcsscolour=getDriver().findElement(forwardarrow).getCssValue("color");
-		String fc = getDriver().findElement(forwardarrow).getCssValue("fill");
-		 return Forwardarrowcsscolour;
-				
+		String Forwardarrowcolour = getDriver().findElement(forwadarrowhighlighted).getCssValue("fill");
+		String Actualarrowcolour = Color.fromString(Forwardarrowcolour).asHex();
+		return Actualarrowcolour;
 	}
-
-	
-	
-	
-	
+	public boolean nextfourdaysforecast() {
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(nextdayforecast).isDisplayed();
+	}
+	String toBrowserHexValue(int number) {
+		StringBuilder builder = new StringBuilder(Integer.toHexString(number & 0xff));
+		while (builder.length() < 2) {
+			builder.append("0");
+		}
+		return builder.toString().toUpperCase();
+	}
 }
-
