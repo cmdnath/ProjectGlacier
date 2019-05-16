@@ -15,6 +15,11 @@ public class ThreeDayForecastPage extends BasePage {
 			"body > div.template-root > div.page-subnav > div > div > div.subnav-items > a.subnav-item.active");
 	private By bycurrentWeatherCard = By.cssSelector(
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p:nth-child(1)");
+	private By bycurrentTime=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p.module-header.sub.date");
+	private By bytodaycardcurrentDate=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(2) > div > p.module-header.sub.date");
+	private By bytonightcardCurrentDate=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(3) > div > p.module-header.sub.date");
+	private By byTomorrowcardDate=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > p.module-header.sub.date");
+	
 	private By byCurrentWeatherTimeStamp = By.cssSelector(
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a.panel.panel-fade-in.card.current > div > p.module-header.sub.date");
 	private By byCurrentWeatherIcon = By.cssSelector(
@@ -67,8 +72,11 @@ public class ThreeDayForecastPage extends BasePage {
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp > span.high");
 	private By byTomorrowWeatherdescription = By.cssSelector(
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.cond");
+	
+	private By bytommorowHiLotemp=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp");
+	
 	private By byAnimationBarForward = By.cssSelector(
-			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active > svg");
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active");
 	private By byAnimationBarBackward = By.cssSelector(
 			"div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2)");
 	private By bynextdayheader = By.cssSelector(
@@ -88,11 +96,9 @@ public class ThreeDayForecastPage extends BasePage {
 	private By backarrowhighlighted = By.cssSelector(
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2) > svg > path");
 
-	public void isnowTabHighlighted() {
+	public String isnowTabHighlighted() {
 		WebPageLoaded.isDomInteractive();
-		WebElement nowTab = getDriver().findElement(bynowTab);
-		nowTab.syncVisible(15);
-		nowTab.isSelected();
+		return getDriver().findElement(bynowTab).getAttribute("class");
 	}
 
 	public String nowTabcolour() {
@@ -174,6 +180,59 @@ public class ThreeDayForecastPage extends BasePage {
 		getDriver().findElement(byTomorrowcard).click();
 		return getDriver().getCurrentUrl();
 	}
+	 public String todaytextdisplayedisHigh()
+	 {
+		 WebPageLoaded.isDomInteractive();
+		 return getDriver().findElement(byTodayHighTemperature).getText();
+	 }
+	 public String tonighttextdisplayedisLow()
+	 {
+		 WebPageLoaded.isDomInteractive();
+		 return getDriver().findElement(byTonightLowTemperatue).getText();
+	 }
+	 public String tomorrowtextHiLoDisplayed()
+	 {
+		 WebPageLoaded.isDomInteractive();
+		 return getDriver().findElement(bytommorowHiLotemp).getText();
+	 }
+	
+	 
+	 
+	 public String getcurentTime()
+	 {
+		 WebPageLoaded.isDomInteractive();
+        WebElement time = getDriver().findElement(bycurrentTime);
+         time.syncVisible(15);
+       return time.getText();
+	 }
+	 
+	 public String gettodaycardDate()
+	 {
+	   WebPageLoaded.isDomInteractive();
+       WebElement time = getDriver().findElement(bytodaycardcurrentDate);
+       time.syncVisible(15);
+       return time.getText();
+		 
+	 }
+	 
+	 public String gettonightcardDate()
+	 {
+	   WebPageLoaded.isDomInteractive();
+       WebElement time = getDriver().findElement(bytonightcardCurrentDate);
+       time.syncVisible(15);
+       return time.getText();
+		 
+	 }
+	 
+	 public String gettomorrowcardDate()
+	 {
+	   WebPageLoaded.isDomInteractive();
+       WebElement time = getDriver().findElement(byTomorrowcardDate);
+       time.syncVisible(15);
+       return time.getText();
+		 
+	 }
+	 
 	public Boolean weatherCardIsDisplayed(String cardName) {
 		if (cardName.equalsIgnoreCase("currentWeather")) {
 			WebPageLoaded.isDomInteractive();
@@ -279,7 +338,7 @@ public class ThreeDayForecastPage extends BasePage {
 			WebPageLoaded.isDomInteractive();
 			return getDriver().findElement(byTomorrowdate).isDisplayed();
 		}
-		if (cardName.equalsIgnoreCase("Tomorrow  Weather icon")) {
+		if (cardName.equalsIgnoreCase("Tomorrow Weather icon")) {
 			WebPageLoaded.isDomInteractive();
 			return getDriver().findElement(byTomorrowWeathericon).isDisplayed();
 		}

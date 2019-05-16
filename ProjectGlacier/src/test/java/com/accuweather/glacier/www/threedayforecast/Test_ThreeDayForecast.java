@@ -9,6 +9,7 @@ import com.accuweather.glacier.www.pages.ForeCastWeatherPage;
 import com.accuweather.glacier.www.pages.LandingPage;
 import com.accuweather.glacier.www.pages.MonthlyForeCastPage;
 import com.accuweather.glacier.www.pages.ThreeDayForecastPage;
+import com.chameleon.selenium.web.WebPageLoaded;
 import com.chameleon.utils.date.SimpleDate;
 
 public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
@@ -22,15 +23,18 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	private MonthlyForeCastPage monthlyforecast = new MonthlyForeCastPage();
 	private SimpleDate simpledate = new SimpleDate();
 	ThreeDayForecastPage threeDayForecastPage = new ThreeDayForecastPage();
+	private SimpleDate getDateTime = new SimpleDate();
+	
 
 	@Test(priority = 1)
 	public void TC1_nowTabOnCityForecastPage() {
+		String Expectedactive="subnav-item active";
 		testStart("Navigate to city forecast page and Verfiy Now Tab highlighted");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		threeDayForecastPage.isnowTabHighlighted();
+		Assert.assertEquals(threeDayForecastPage.isnowTabHighlighted(), Expectedactive, "Now tab is not active ");
 	}
 	
 	@Test(priority = 2)
@@ -46,7 +50,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 3)
-	public void TC2_verifyingFourWeatherCardsDisplayed() {
+	public void TC2_verifyingFourWeatherCardisDisplayed() {
 		testStart("Navigate to city day forecast page and Validate 4 weather cards are displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -56,7 +60,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 4)
-	public void TC2_verifyingCurrentWeatherisDisplayed() {
+	public void TC2_verifyingCurrentWeathercardisDisplayed() {
 		testStart("Navigate to city day forecast page and Validating Current Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -66,7 +70,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 5)
-	public void TC2_verifyingToadyWeatherisDisplayed() {
+	public void TC2_verifyingTodayWeathercardisDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Today Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -76,7 +80,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 6)
-	public void TC2_verifyingTonightWeatherisDisplayed() {
+	public void TC2_verifyingTonightWeathercardisDisplayed() {
 		String ExpectedTonightcardtitle = "TONIGHT";
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
@@ -87,7 +91,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 7)
-	public void TC2_verifyingTomorrowWeatherisDisplayed() {
+	public void TC2_verifyingTomorrowWeathercardisDisplayed() {
 		String ExpectedTomorrowcardtitle = "TOMORROW";
 		testStart("Navigate to city day forecast page and Validate Tomorrow Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
@@ -95,8 +99,6 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
 		Assert.assertTrue(threeDayForecastPage.tomorrowWeathercardisDisplayed());
-		String tomorrowcardTitle = threeDayForecastPage.tomorrowweathercardTitle();
-		Assert.assertEquals(tomorrowcardTitle, ExpectedTomorrowcardtitle);
 	}
 
 	@Test(priority = 8)
@@ -112,23 +114,23 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 9)
-	public void TC3_verifyingCurrentWeatherTimeDisplayed() {
+	public void TC3_verifyingcurrentweathercardCurrentTimeisDisplayed() {
 		testStart("Navigate to city day forecast page and Validating Time stamp displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		System.out.println(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Time Stamp"));
-	}
+		Assert.assertNotNull(threeDayForecastPage.getcurentTime(),"Current card Current time not Displayed");
+		}
 
 	@Test(priority = 10)
-	public void TC3_verifyingCurrentWeatherIconDisplayed() {
-		testStart("Navigate to city day forecast page and Validating Time stamp displayed ");
+	public void TC3_verifyingCurrentWeathercardweathericonisDisplayed() {
+		testStart("Navigate to city day forecast page and Validating Weather icon is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		System.out.println(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Time Stamp"));
+		Assert.assertNotNull(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Weather Icon"));
 	}
 
 	@Test(priority = 11)
@@ -138,18 +140,17 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		System.out.println(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Temperature"));
+		Assert.assertNotNull(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Temperature"));
 	}
 
 	@Test(priority = 12)
 	public void TC3_verifyingCurrentWeathercardRealfeelTempisDisplayed() {
-		testStart("Navigate to city day forecast page and Validating Current Weather RealFee Temperature displayed ");
+		testStart("Navigate to city day forecast page and Validating Current Weather Real feel temperature with trademark symbol is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		System.out.println(
-		threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Real FeelTemperature"));
+		Assert.assertNotNull(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Real FeelTemperature"));
 	}
 
 	@Test(priority = 13)
@@ -159,7 +160,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		System.out.println(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Description"));
+		Assert.assertNotNull(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current Weather Description"));
 	}
 
 	@Test(priority = 14)
@@ -180,12 +181,13 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		String ActualUrldisplayed = threeDayForecastPage.CurrentWeatherurldisplayed();
-		Assert.assertEquals(ActualUrldisplayed, ExpectedUrl);
+		threeDayForecastPage.isclickedonCurrentWeather();
+		Assert.assertEquals(getDriver().getCurrentUrl(), ExpectedUrl);
+		
 	}
 	
 	@Test(priority = 16)
-	public void TC5_verifyingToadycardWeathercardisDisplayed() {
+	public void TC5_verifyingTodaycardWeathercardisDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Today Weather card Title is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -195,7 +197,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 17)
-	public void TC5_verifyingToadycardTitle() {
+	public void TC5_verifyingTodaycardTitledisplayed() {
 		String ExpectedTodaycardtitle = "TODAY";
 		testStart("Navigate to city day forecast page and Validate Today Weather card Title is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
@@ -207,13 +209,13 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 18)
-	public void TC5_verifyingToadycardWeatherDateisDisplayed() {
+	public void TC5_verifyingTodaycardcurrentDateisDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Today Weather card has current Date displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Current date"));
+		Assert.assertNotNull(threeDayForecastPage.gettodaycardDate(), "Current Date is not displayed for Current card");
 	}
 
 	@Test(priority = 19)
@@ -228,12 +230,14 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 	@Test(priority = 20)
 	public void TC5_verifyingtodaycardTemperatureisDisplayed() {
+		String ExpectedText="Hi";
 		testStart("Navigate to city day forecast page and Validate Today Weather card has High Temperature displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Today High Temperature"));
+		Assert.assertEquals(threeDayForecastPage.todaytextdisplayedisHigh(), ExpectedText, "Text Hi is not displayed");
+		
 	}
 
 	@Test(priority = 21)
@@ -243,8 +247,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(
-		threeDayForecastPage.weatherCardElementsDetailsDisplayed("Today RealFeelTemperature with trademark"));
+		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Today RealFeelTemperature with trademark"));
 	}
 
 	@Test(priority = 22)
@@ -258,7 +261,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 23)
-	public void TC6_verifyingTonightWeatherisDisplayed() {
+	public void TC6_verifyingTonightWeathercardisDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -268,7 +271,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 24)
-	public void TC6_verifyingTonightWeathercadrTitle() {
+	public void TC6_verifyingTonightWeathercardtitleDisplayed() {
 		String ExpectedTonightcardtitle = "TONIGHT";
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
@@ -280,17 +283,17 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 25)
-	public void TC6_verifyingTonightcarddateDisplayed() {
+	public void TC6_verifyingTonightWeathercardDateDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card has current Date displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Tonight Current date"));
+		Assert.assertNotNull(threeDayForecastPage.gettonightcardDate(), "Current Date is not displayed for Tonight card");
 	}
 
 	@Test(priority = 26)
-	public void TC6_verifyingTonightcardWeathericonisDisplayed() {
+	public void TC6_verifyingTonightWeathercardisiconDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card has Weather icon displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -300,18 +303,19 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 27)
-	public void TC6_verifyingtonightcardTemperatureisDisplayed() {
-		testStart(
-				"Navigate to city day forecast page and Validate Tonight Weather card has High Temperature displayed ");
+	public void TC6_verifyingtonightweathercardTemperatureDisplayed() {
+		String ExpectedText ="Lo";
+		testStart("Navigate to city day forecast page and Validate Tonight Weather card has Low Temperature displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Tonight Low Temperature"));
+		Assert.assertEquals(threeDayForecastPage.tonighttextdisplayedisLow(), ExpectedText, "Text Low is not displayed");
 	}
+		
 
 	@Test(priority = 28)
-	public void TC6_verifyingtonightcardRealfeeltempisDisplayed() {
+	public void TC6_verifyingtonightweathercardRealfeeltempDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card has Real feel Temperature with trademark displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -342,20 +346,18 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 31)
-	public void TC7_verifyingnavigatingtoCurrentWeatherlocationpage() throws InterruptedException {
+	public void TC7_verifyingnavigatingtoCurrentWeatherlocationpage()  {
 		String ExpectedUrl = "https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		String ActualUrldisplayed = threeDayForecastPage.todayWeatherurldisplayed();
-		Thread.sleep(5000);
-		Assert.assertEquals(ActualUrldisplayed, ExpectedUrl);
+		Assert.assertEquals(threeDayForecastPage.todayWeatherurldisplayed(), ExpectedUrl,"Landing page URL Mismatch");
 	}
 
 	@Test(priority = 32)
-	public void TC8_verifyingTomorrowtWeatherisDisplayed() {
+	public void TC8_verifyingtomorrowtWeathercardisDisplayed() {
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card is displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
@@ -378,12 +380,13 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 	@Test(priority = 34)
 	public void TC8_verifyingTomorrowcarddateDisplayed() {
-		testStart("Navigate to city day forecast page and Validate Tomorrow Weather card has current Date displayed ");
+		testStart("Navigate to city day forecast page and Validate Tomorrow Weather card has  Date displayed ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Tomorrow Current date"));
+		Assert.assertNotNull(threeDayForecastPage.gettomorrowcardDate(), "Date is not displayed for Tomorrow card");
+		
 	}
 
 	@Test(priority = 35)
@@ -393,7 +396,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Tomorrow  Weather icon"));
+		Assert.assertNotNull(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Tomorrow Weather icon"));
 	}
 
 	@Test(priority = 36)
@@ -403,7 +406,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
-		Assert.assertTrue(threeDayForecastPage.weatherCardElementsDetailsDisplayed("Tomorrow High and Low Temperature"));
+		Assert.assertNotNull(threeDayForecastPage.tomorrowtextHiLoDisplayed(), "Tomorrow card Hi and Lo text not displayed ");
 	}
 
 	@Test(priority = 37)
@@ -428,7 +431,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 39)
-	public void TC9_verifyingnavigatingtoCurrentWeatherlocationpage() throws InterruptedException {
+	public void TC9_verifyingnavigatingtoCurrentWeatherlocationpage() {
 		String ExpectedUrl = "https://development.accuweather.com/en/us/state-college/16801/daily-weather-forecast/6787_pc?day=1";
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 		landingpage.enterZipcodeInSearchField(zipcode);
@@ -436,7 +439,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
 		String ActualUrldisplayed=threeDayForecastPage.tomorrowWeatherurldisplayed();
-		Thread.sleep(5000);
+		WebPageLoaded.isDomInteractive(3000);
 		Assert.assertEquals(ActualUrldisplayed, ExpectedUrl);
 	}
 
@@ -462,36 +465,37 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	}
 
 	@Test(priority = 42)
-	public void TC11_VerifyingnFourfuturedays() throws InterruptedException {
+	public void TC11_VerifyingnFourfuturedays() {
 		testStart("Navigate to city forecast city page and Click on forward arrow verfiy four future days displayed");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
+		WebPageLoaded.isDomInteractive(3000);
 		threeDayForecastPage.animationforwardarrowclick();
-		Thread.sleep(3000);
+		WebPageLoaded.isDomInteractive(3000);
 		Assert.assertTrue(threeDayForecastPage.nextfourdaysforecast());
 	}
 
 	@Test(priority = 43)
-	public void TC11_VerifyingnbackarrowActive() throws InterruptedException {
+	public void TC11_VerifyingnbackarrowActive() {
 		String ExpectedForwardarroworange = "#f59721"; // Back arrow active and enabled after forward click
 		testStart("Navigate to city forecast city page and Click on forward arrow verfiy Backarrow enabled and displayed in orange colour");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		threeDayForecastPage.animationforwardarrowclick();
-		Thread.sleep(3000);
+		WebPageLoaded.isDomInteractive(3000);
 		String backarowcolour2 = threeDayForecastPage.Backarrowcolour2();
 		Assert.assertEquals(backarowcolour2, ExpectedForwardarroworange);
 	}
 
 	@Test(priority = 44)
-	public void TC11_VerifyingpastfourdaysDisplayed() throws InterruptedException {
+	public void TC11_VerifyingpastfourdaysDisplayed() {
 		testStart("Navigate to city forecast city page,Click on forward arrow verfiy future days displayed,click on Back arrow to  past days ");
 		landingpage.enterZipcodeInSearchField(zipcode);
 		landingpage.clickOnZipcodeSearchIcon();
 		threeDayForecastPage.animationforwardarrowclick();
-		Thread.sleep(3000);
+		WebPageLoaded.isDomInteractive(6000);
 		threeDayForecastPage.animationBackwardarrowclick();
-		Thread.sleep(3000);
+		WebPageLoaded.isDomInteractive(6000);
 		Assert.assertTrue(threeDayForecastPage.fourWeathercardisDisplayed());
 	}
 }
