@@ -3,6 +3,7 @@ package com.accuweather.glacier.www.navigation;
 import java.util.Arrays;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.accuweather.glacier.Environment;
@@ -360,6 +361,8 @@ public class Test_SearchByBrowseLocation extends AccuWeatherBaseTest {
 		 * EnteredCityName,"The City Name's Are Same"); }
 		 */
 	  
+	
+	
 	/*
 	 * @Test (priority =5) public void
 	 * test_DisplayedCurrentWeatherDataMatchesRestData() { Condition condition =
@@ -372,31 +375,35 @@ public class Test_SearchByBrowseLocation extends AccuWeatherBaseTest {
 	 * currentWeather.validateCurrentConditions(condition);
 	 * TestReporter.assertAll(); }
 	 */
+	 
+	 
 	  
-	/*
-	 * @Test (priority =6) public void
-	 * test_DisplayedDailyForeCastWeatherDataMatchesRestData() { Example example =
-	 * DailyForecastsHelper.getCityDailyForecast(Environment.getEnvironment(),
-	 * "US","State College","PA");
-	 * System.out.println("dailyforecast..............."+example); String
-	 * DailyForeCastURL = example.getDailyForecasts().get(0).getLink();
-	 * System.out.println("DailyForeCastURL DailyForeCastURL..............."
-	 * +DailyForeCastURL); setPageURL(DailyForeCastURL); Double
-	 * DailyForeCastMaximumTemperature =
-	 * example.getDailyForecasts().get(0).getTemperature().getMaximum().getValue();
-	 * System.out.
-	 * println("DailyForeCastMaximumTemperature DailyForeCastMaximumTemperature..............."
-	 * +DailyForeCastMaximumTemperature); String DailyForeCastAirPollenName =
-	 * example.getDailyForecasts().get(0).getAirAndPollen().get(0).getName();
-	 * System.out.
-	 * println("DailyForeCastAirPollenName DailyForeCastAirPollenName..............."
-	 * +DailyForeCastAirPollenName); String DailyForeCastHeadLineText =
-	 * example.getHeadline().getText(); System.out.
-	 * println("DailyForeCastHeadLineText DailyForeCastHeadLineText..............."
-	 * +DailyForeCastHeadLineText);
-	 * testStart("test_DisplayedDailyForeCastDataMatchesRestData");
-	 * dailyforecastpage1.validateDailyForeCastPage1(example); }
-	 */
+	
+	
+	
+	  @Test (priority =6) public void test_DisplayedDailyForeCastWeatherDataMatchesRestData() 
+	  { 
+	  Example example = DailyForecastsHelper.getCityDailyForecast(Environment.getEnvironment(),
+	  "US","State College","PA");
+	  System.out.println("dailyforecast..............."+example); 
+	  String DailyForeCastURL = example.getDailyForecasts().get(0).getLink();
+	  System.out.println("DailyForeCastURL DailyForeCastURL..............."	+DailyForeCastURL); 
+	  setPageURL(DailyForeCastURL); 
+	  Double DailyForeCastMaximumTemperature = example.getDailyForecasts().get(0).getTemperature().getMaximum().getValue();
+	  System.out.println("DailyForeCastMaximumTemperature.............."+DailyForeCastMaximumTemperature); 
+	  String DailyForeCastAirPollenName = example.getDailyForecasts().get(0).getAirAndPollen().get(0).getName();
+	  System.out.println("DailyForeCastAirPollenName..............."+DailyForeCastAirPollenName);
+	  String DailyForeCastHeadLineText = example.getHeadline().getText();
+	  System.out.println("DailyForeCastHeadLineText.............."+DailyForeCastHeadLineText);
+	  testStart("test_DisplayedDailyForeCastDataMatchesRestData");
+	  //int DailyTemp = dailyforecastpage1.validate1(by, elementName, expectedText);;
+	  //Assert.assertEquals(DailyTemp, DailyForeCastMaximumTemperature);
+	  //Double DailyForecastTemperature = example.getDailyForecasts().get(0).getTemperature().
+	  //Assert.assertTrue(dailyforecastpage1.validateDailyForeCastPage1(example));
+	  dailyforecastpage1.validateDailyForeCastPage1(example); 
+	
+      
+	  }
 	 
 	 
 		

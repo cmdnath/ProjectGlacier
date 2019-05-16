@@ -39,16 +39,17 @@ public class Test_PodcastPage extends AccuWeatherBaseTest {
 	 * Assert.assertTrue(podpage.isAWLogoTextDisplayed()); }
 	 */
 	  
-	  @Test (priority=3) public void TC5_isAWHomePageDisplayed() {
-	  testStart("Is AccuWeather Home page Displayed From PodCast Page");
-	  navBar.mouseHoverOnMoreMenu(); navBar.mouseHoverOnPodcastSubMenu();
-	  waitUntilElementIsDisplayedOrClickable(); navBar.clickOnPodcastSubMenu();
-	  waitUntilWindowExistsWithTitle(PodcastTitle);
-	  waitUntilElementIsDisplayedOrClickable(); podpage.clickOnAWLogo();
-	  Assert.assertTrue(navBar.isAWLogoDisplayed());	   
-	  ActualHomePageTitle = getDriver().getTitle();
-	  Assert.assertEquals(ActualHomePageTitle, ExpectedHomePageTitle);
-	  }
+	/*
+	 * @Test (priority=3) public void TC5_isAWHomePageDisplayed() {
+	 * testStart("Is AccuWeather Home page Displayed From PodCast Page");
+	 * navBar.mouseHoverOnMoreMenu(); navBar.mouseHoverOnPodcastSubMenu();
+	 * waitUntilElementIsDisplayedOrClickable(); navBar.clickOnPodcastSubMenu();
+	 * waitUntilWindowExistsWithTitle(PodcastTitle);
+	 * waitUntilElementIsDisplayedOrClickable(); podpage.clickOnAWLogo();
+	 * Assert.assertTrue(navBar.isAWLogoDisplayed()); ActualHomePageTitle =
+	 * getDriver().getTitle(); Assert.assertEquals(ActualHomePageTitle,
+	 * ExpectedHomePageTitle); }
+	 */
 	  
 	/*
 	 * @Test (priority=4) public void TC6_isLatestEpisodeVideoDisplayed() {

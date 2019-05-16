@@ -24,6 +24,8 @@ public class DailyForeCastPage1 extends BasePage {
 	public void validateDailyForeCastPage1 (Example example) {
 		 getDriver().page().isDomInteractive(10000);
 	     getDriver().findElement(byDailyForecastDayTemp).syncVisible();
+	     String Temperature = getDriver().findElement(byDailyForecastDayTemp).getText();
+	     System.out.println("Temperature Temperature ... "+Temperature);
 	     validate1(byDailyForecastDayTemp, "Day Detail Panel: Temperature",round(example.getDailyForecasts().get(0).getTemperature().getMaximum().getValue(),0));
 		//validate1(byDailyForecastDayTemp, "Day Detail Panel: Temperatur",round(DailyForecast.getTemperature().getMaximum().getImperial().getValue(),0));
 		//validate1(byDailyForecastDayHrsOfRain, "Day Detail Panel: Hours Of Rain",headline.getDailyForecasts());
@@ -108,7 +110,7 @@ public class DailyForeCastPage1 extends BasePage {
              TestReporter.softAssertTrue(found, "Validate element [ " + elementName + " ] contains text [ " + expectedText + " ]. Found text [ " + elementText + " ]");
              if (!found) {
                  element.highlight();
-                 // TestReporter.logScreenshot(element, elementName);
+                  TestReporter.logScreenshot(element, elementName);
              }
 			/*
 			 * else if (elementName.equals("Current Panel: RealFeel Temperature")) {

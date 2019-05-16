@@ -6,7 +6,7 @@ import com.chameleon.api.restServices.RestResponse;
 import com.chameleon.api.restServices.ParameterBuilder.Parameters;
 
 public class V1 extends BaseAPI {
-	private String path = "/v1/Daily/";
+	private String path = "/v1/Daily";
 
     public V1(String previousPath) {
         path = previousPath + path;
@@ -32,6 +32,8 @@ public class V1 extends BaseAPI {
         params.add("details", details);
         return sendGetRequest(pathBuilder(path, locationKey), buildParams(params));
     }
+    
+   
 
 	/*
 	 * public RestResponse getDetails(com.accuweather.api.objects1.Location
