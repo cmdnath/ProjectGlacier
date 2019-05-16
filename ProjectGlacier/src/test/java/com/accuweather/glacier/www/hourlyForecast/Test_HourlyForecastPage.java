@@ -1,5 +1,17 @@
 package com.accuweather.glacier.www.hourlyForecast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -713,23 +725,68 @@ public class Test_HourlyForecastPage extends AccuWeatherBaseTest
 		}
 	}
 
-	@Test(priority = 27, enabled = false)
-	public void TC11_getStationCode_And_GTMOffset()
+	@Test(priority = 27, enabled = true)
+	public void TC11_getStationCode_And_GTMOffset() throws ParseException, IOException
 	{
-		testStart("API validation");
-		landingPage.enterZipcodeInSearchField(zipCode);
-		landingPage.clickOnZipcodeSearchIcon();
-		waitUntilElementIsDisplayedOrClickable();
-		waitUntilWindowExistsWithTitle(expectedLandingPageTitle);
-		WebPageLoaded.isDomInteractive(1000);
 
-		hourlyPage.clickOnHourlyTab();
-		WebPageLoaded.isDomInteractive(1000);
-
-		final RestResponse qaResponse = AccuweatherRest.locations().v1(QA).searchByLocationKey("23238_pc", true);
+		/*final RestResponse qaResponse = AccuweatherRest.locations().v1(QA).searchByLocationKey("23238_pc", true);
 		System.out.println(qaResponse.getResponse());
 		System.out.println(qaResponse.getStatusCode());
-	}
+	     
+	     //JSONObject myResponse = new JSONObject(response.toString());
+	      * 
+	      * 
+	      * 
+*/	
+		 String url = "http://accuweather-api-glacier-northcentral-us.cloudapp.net/locations/v1/348181?apikey=5251445912b143d8b4bee5a741762dd1&language=en-us&details=True";
+	     URL obj = new URL(url);
+	     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+	     // optional default is GET
+	     con.setRequestMethod("GET");
+	     //add request header
+	     con.setRequestProperty("User-Agent", "Mozilla/5.0");
+	     int responseCode = con.getResponseCode();
+	     System.out.println("\nSending 'GET' request to URL : " + url);
+	     System.out.println("Response Code : " + responseCode);
+	     BufferedReader in = new BufferedReader(
+	             new InputStreamReader(con.getInputStream()));
+	     String inputLine;
+	     StringBuffer response = new StringBuffer();
+	     while ((inputLine = in.readLine()) != null) {
+	     	response.append(inputLine);
+	     }
+	     in.close();
+	     //print in String
+	     System.out.println(response.toString());
+	     //Read JSON response and print
+	     JSONObject myResponse = new JSONObject(response.toString());
+	     JSONObject region = myResponse.getJSONObject("Region");
+	     String ID = region.getString("ID");
+	     System.out.println("ID: "+ID);
+	     System.out.println(region.length());
+	     
+	     JSONObject geoPosition = myResponse.getJSONObject("GeoPosition");
+	     System.out.println("Value: "+geoPosition.getJSONObject("Elevation").getJSONObject("Metric").getDouble("Value"));
+	     
+	     //JSONArray getArray = 
+	     System.out.println("result after Reading JSON Response "+myResponse);
+	     System.out.println("Version- "+myResponse.getInt("Version"));
+	     System.out.println("Key- "+myResponse.getString("Key"));
+	     System.out.println("Localized Name" +myResponse.getString("LocalizedName"));
+	     //System.out.println("Localized Name" +myResponse.getString("GmtOffset"));
+	     /*System.out.println("ipAddress- "+myResponse.getString("ipAddress"));
+	     System.out.println("countryCode- "+myResponse.getString("countryCode"));
+	     System.out.println("countryName- "+myResponse.getString("countryName"));
+	     System.out.println("regionName- "+myResponse.getString("regionName"));
+	     System.out.println("cityName- "+myResponse.getString("cityName"));
+	     System.out.println("zipCode- "+myResponse.getString("zipCode"));
+	     System.out.println("latitude- "+myResponse.getString("latitude"));
+	     System.out.println("longitude- "+myResponse.getString("longitude"));
+	     System.out.println("timeZone- "+myResponse.getString("timeZone"));*/  
+	   }	
+	
+	
+	
 
 	@Test(priority = 28, enabled = false)
 	public void TC12_validationAfterClickingOnWeatherIcon()
@@ -1160,7 +1217,7 @@ public class Test_HourlyForecastPage extends AccuWeatherBaseTest
 
 	}
 
-	@Test(priority = 45, enabled = true)
+	@Test(priority = 45, enabled = false)
 	public void TC16_validateDateOnAllTabsOfFirstPage()
 	{
 		testStart("Validation whether Date is correct on all the hour tabs of Hourly Page");
@@ -1185,5 +1242,51 @@ public class Test_HourlyForecastPage extends AccuWeatherBaseTest
 		}
 
 	}
+	
+	public static void main(String[] args) {
+	     try {
+	         call_me();
+	        } catch (Exception e) {
+	         e.printStackTrace();
+	       }
+	     }
+		   
+	public static void call_me() throws Exception {
+	     String url = "http://api.ipinfodb.com/v3/ip-city/?key=d64fcfdfacc213c7ddf4ef911dfe97b55e4696be3532bf8302876c09ebd06b&ip=74.125.45.100&format=json";
+	     URL obj = new URL(url);
+	     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+	     // optional default is GET
+	     con.setRequestMethod("GET");
+	     //add request header
+	     con.setRequestProperty("User-Agent", "Mozilla/5.0");
+	     int responseCode = con.getResponseCode();
+	     System.out.println("\nSending 'GET' request to URL : " + url);
+	     System.out.println("Response Code : " + responseCode);
+	     BufferedReader in = new BufferedReader(
+	             new InputStreamReader(con.getInputStream()));
+	     String inputLine;
+	     StringBuffer response = new StringBuffer();
+	     while ((inputLine = in.readLine()) != null) {
+	     	response.append(inputLine);
+	     }
+	     in.close();
+	     //print in String
+	     System.out.println(response.toString());
+	     //Read JSON response and print
+	     JSONObject myResponse = new JSONObject(response.toString());
+	     System.out.println("result after Reading JSON Response");
+	     System.out.println("statusCode- "+myResponse.getString("statusCode"));
+	     System.out.println("statusMessage- "+myResponse.getString("statusMessage"));
+	     System.out.println("ipAddress- "+myResponse.getString("ipAddress"));
+	     System.out.println("countryCode- "+myResponse.getString("countryCode"));
+	     System.out.println("countryName- "+myResponse.getString("countryName"));
+	     System.out.println("regionName- "+myResponse.getString("regionName"));
+	     System.out.println("cityName- "+myResponse.getString("cityName"));
+	     System.out.println("zipCode- "+myResponse.getString("zipCode"));
+	     System.out.println("latitude- "+myResponse.getString("latitude"));
+	     System.out.println("longitude- "+myResponse.getString("longitude"));
+	     System.out.println("timeZone- "+myResponse.getString("timeZone"));  
+	   }
+	
 
 }
