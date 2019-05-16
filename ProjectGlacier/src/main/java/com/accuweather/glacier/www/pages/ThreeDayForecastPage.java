@@ -448,5 +448,4 @@ public class ThreeDayForecastPage extends BasePage {
 		}
 		return builder.toString().toUpperCase();
 	}
-	//Changes Applied 
 }

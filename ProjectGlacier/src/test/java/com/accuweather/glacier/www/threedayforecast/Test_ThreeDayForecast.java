@@ -498,5 +498,5 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		WebPageLoaded.isDomInteractive(6000);
 		Assert.assertTrue(threeDayForecastPage.fourWeathercardisDisplayed());
 	}
-	//Changes Applied 
+	 
 }
