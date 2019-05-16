@@ -72,9 +72,8 @@ public class ThreeDayForecastPage extends BasePage {
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp > span.high");
 	private By byTomorrowWeatherdescription = By.cssSelector(
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.cond");
-	
-	private By bytommorowHiLotemp=By.cssSelector("body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp");
-	
+	private By bytommorowHiLotemp=By.cssSelector(
+			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.scroll > a:nth-child(4) > div > div.temp");
 	private By byAnimationBarForward = By.cssSelector(
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div.arrow.top.card.active");
 	private By byAnimationBarBackward = By.cssSelector(
@@ -196,8 +195,6 @@ public class ThreeDayForecastPage extends BasePage {
 		 return getDriver().findElement(bytommorowHiLotemp).getText();
 	 }
 	
-	 
-	 
 	 public String getcurentTime()
 	 {
 		 WebPageLoaded.isDomInteractive();
@@ -221,7 +218,6 @@ public class ThreeDayForecastPage extends BasePage {
        WebElement time = getDriver().findElement(bytonightcardCurrentDate);
        time.syncVisible(15);
        return time.getText();
-		 
 	 }
 	 
 	 public String gettomorrowcardDate()
@@ -230,7 +226,6 @@ public class ThreeDayForecastPage extends BasePage {
        WebElement time = getDriver().findElement(byTomorrowcardDate);
        time.syncVisible(15);
        return time.getText();
-		 
 	 }
 	 
 	public Boolean weatherCardIsDisplayed(String cardName) {
@@ -453,4 +448,5 @@ public class ThreeDayForecastPage extends BasePage {
 		}
 		return builder.toString().toUpperCase();
 	}
+	//Changes Applied 
 }
