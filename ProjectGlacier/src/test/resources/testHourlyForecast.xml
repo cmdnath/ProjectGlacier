@@ -11,5 +11,12 @@
 			<package name="com.accuweather.glacier.www.hourlyForecast.*" />
 		</packages>
 	</test>
+	
+	<parameter name="browserUnderTest" value="firefox" />
+	<test name="Monthly Forecasts Tests In Firefox Browser" >
+		<packages>
+			<package name="com.accuweather.glacier.www.monthlyforecast.*" />
+		</packages>
+	</test>
  
 </suite>
