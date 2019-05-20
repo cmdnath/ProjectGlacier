@@ -3,7 +3,7 @@ package com.chameleon.utils.date;
 
 
 import java.sql.Timestamp;
-
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import java.util.Calendar;
@@ -471,5 +471,11 @@ public class SimpleDate
 	}
 
 
+	public String getCurrentTime()
+	{
+		DateFormat dateFormat = new SimpleDateFormat("hh:mm aa");
+    	String currentTime = dateFormat.format(new Date()).toString();
+    	return currentTime;
+	}
 
 }

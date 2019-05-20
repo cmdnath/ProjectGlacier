@@ -10,7 +10,6 @@ import com.accuweather.glacier.www.pages.ForeCastWeatherPage;
 import com.accuweather.glacier.www.pages.LandingPage;
 import com.accuweather.glacier.www.pages.MonthlyForeCastPage;
 import com.accuweather.glacier.www.pages.ThreeDayForecastPage;
-import com.chameleon.selenium.web.WebPageLoaded;
 import com.chameleon.utils.date.SimpleDate;
 
 
@@ -19,13 +18,13 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	String zipcode = "16801";
+	String zipcode = "53558";
 
 	String actualForecastPageTitle;
 
-	String expectedForecastPageTitle = "State College Weather - AccuWeather Forecast for PA 16801";
+	String expectedForecastPageTitle = "Mc Farland Weather - AccuWeather Forecast for WI 53558";
 
-	String pageTitle3day = "Weather in State College - AccuWeather Forecast for PA 16805";
+	String pageTitle3day = "Weather in Mc Farland - AccuWeather Forecast for WI 53558";
 
 	private LandingPage landingpage = new LandingPage();
 
@@ -42,7 +41,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	
 
 
-
+/*
 	@Test(priority = 1)
 
 	public void TC1_nowTabOnCityForecastPage() {
@@ -149,11 +148,9 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 
 	public void TC2_verifyingTonightWeathercardisDisplayed() {
-
-		String ExpectedTonightcardtitle = "TONIGHT";
 
 		testStart("Navigate to city day forecast page and Validate Tonight Weather card is displayed ");
 
@@ -171,11 +168,9 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 7)
+	@Test(priority = 7, enabled = false)
 
 	public void TC2_verifyingTomorrowWeathercardisDisplayed() {
-
-		String ExpectedTomorrowcardtitle = "TOMORROW";
 
 		testStart("Navigate to city day forecast page and Validate Tomorrow Weather card is displayed ");
 
@@ -193,7 +188,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 8)
+	@Test(priority = 8, enabled = false)
 
 	public void TC3_verifyingCurrentWeatherTitleDisplayed() {
 
@@ -217,7 +212,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 9)
+	@Test(priority = 9, enabled = false)
 
 	public void TC3_verifyingcurrentweathercardCurrentTimeisDisplayed() {
 
@@ -237,7 +232,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 10)
+	@Test(priority = 10, enabled = false)
 
 	public void TC3_verifyingCurrentWeathercardweathericonisDisplayed() {
 
@@ -257,7 +252,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 11)
+	@Test(priority = 11, enabled = false)
 
 	public void TC3_verifyingCurrentWeathercardTemperatureisDisplayed() {
 
@@ -277,7 +272,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 12)
+	@Test(priority = 12, enabled = false)
 
 	public void TC3_verifyingCurrentWeathercardRealfeelTempisDisplayed() {
 
@@ -297,7 +292,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 13)
+	@Test(priority = 13, enabled = false)
 
 	public void TC3_verifyingCurrentWeathercardWeatherDescriptionisDisplayed() {
 
@@ -317,11 +312,11 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 14)
+	@Test(priority = 14, enabled = false)
 
 	public void TC4_verfyingisclickedonCurrentweathercard() {
 
-		String ExpectedUrl = "https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
+		String ExpectedUrl = "https://development.accuweather.com/en/us/mc-farland/53558/current-weather/23238_pc";
 
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 
@@ -334,14 +329,15 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
 
 		threeDayForecastPage.isclickedonCurrentWeather();
+		Assert.assertEquals(getDriver().getCurrentUrl(),ExpectedUrl);
 
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 15, enabled = false)
 
 	public void TC4_verifyingnavigatingtoCurrentWeatherlocationpage() {
 
-		String ExpectedUrl = "https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
+		String ExpectedUrl = "https://development.accuweather.com/en/us/mc-farland/53558/current-weather/23238_pc";
 
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 
@@ -363,7 +359,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 	
 
-	@Test(priority = 16)
+	@Test(priority = 16, enabled = false)
 
 	public void TC5_verifyingTodaycardWeathercardisDisplayed() {
 
@@ -383,7 +379,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 17)
+	@Test(priority = 17, enabled = false)
 
 	public void TC5_verifyingTodaycardTitledisplayed() {
 
@@ -407,7 +403,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 18)
+	@Test(priority = 18, enabled = false)
 
 	public void TC5_verifyingTodaycardcurrentDateisDisplayed() {
 
@@ -427,7 +423,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 19)
+	@Test(priority = 19, enabled = false)
 
 	public void TC5_verifyingToadycardWeathericonisDisplayed() {
 
@@ -447,7 +443,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 20)
+	@Test(priority = 20, enabled = false)
 
 	public void TC5_verifyingtodaycardTemperatureisDisplayed() {
 
@@ -471,7 +467,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 21)
+	@Test(priority = 21, enabled = false)
 
 	public void TC5_verifyingtodaycardRealfeeltempisDisplayed() {
 
@@ -491,7 +487,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 22)
+	@Test(priority = 22, enabled = false)
 
 	public void TC5_verifyingtodaycardWeatherdescriptionisDisplayed() {
 
@@ -511,7 +507,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 23)
+	@Test(priority = 23, enabled = false)
 
 	public void TC6_verifyingTonightWeathercardisDisplayed() {
 
@@ -531,7 +527,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 24)
+	@Test(priority = 24, enabled = false)
 
 	public void TC6_verifyingTonightWeathercardtitleDisplayed() {
 
@@ -555,7 +551,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 25)
+	@Test(priority = 25, enabled = false)
 
 	public void TC6_verifyingTonightWeathercardDateDisplayed() {
 
@@ -575,7 +571,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 26)
+	@Test(priority = 26, enabled = false)
 
 	public void TC6_verifyingTonightWeathercardisiconDisplayed() {
 
@@ -595,7 +591,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 27)
+	@Test(priority = 27, enabled = false)
 
 	public void TC6_verifyingtonightweathercardTemperatureDisplayed() {
 
@@ -619,7 +615,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 28)
+	@Test(priority = 28, enabled = false)
 
 	public void TC6_verifyingtonightweathercardRealfeeltempDisplayed() {
 
@@ -639,7 +635,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 29)
+	@Test(priority = 29, enabled = false)
 
 	public void TC6_verifyingtonightcardWeatherdescriptionisDisplayed() {
 
@@ -659,11 +655,11 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 30)
+	@Test(priority = 30, enabled = false)
 
 	public void TC7_verfyingisclickedonTodayweathercard() {
 
-		String ExpectedUrl="https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
+		String ExpectedUrl="https://development.accuweather.com/en/us/mc-farland/53558/current-weather/23238_pc";
 
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 
@@ -676,16 +672,17 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
 
 		threeDayForecastPage.isclickedonTodayWeather();
+		Assert.assertEquals(getDriver().getCurrentUrl(), ExpectedUrl);
 
 	}
 
 
 
-	@Test(priority = 31)
+	@Test(priority = 31, enabled = false)
 
 	public void TC7_verifyingnavigatingtoCurrentWeatherlocationpage()  {
 
-		String ExpectedUrl = "https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
+		String ExpectedUrl = "https://development.accuweather.com/en/us/mc-farland/53558/current-weather/23238_pc";
 
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 
@@ -703,7 +700,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 32)
+	@Test(priority = 32, enabled = false)
 
 	public void TC8_verifyingtomorrowtWeathercardisDisplayed() {
 
@@ -723,7 +720,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 33)
+	@Test(priority = 33, enabled = false)
 
 	public void TC8_verifyingTomorrowWeathercadrTitle() {
 
@@ -747,7 +744,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 34)
+	@Test(priority = 34, enabled = false)
 
 	public void TC8_verifyingTomorrowcarddateDisplayed() {
 
@@ -769,7 +766,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 35)
+	@Test(priority = 35, enabled = false)
 
 	public void TC8_verifyingTomorrowcardWeathericonisDisplayed() {
 
@@ -789,7 +786,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 36)
+	@Test(priority = 36, enabled = false)
 
 	public void TC8_verifyingTomorrowcardTemperatureisDisplayed() {
 
@@ -809,7 +806,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 37)
+	@Test(priority = 37, enabled = false)
 
 	public void TC8_verifyingTomorrowcardWeatherdescriptionisDisplayed() {
 
@@ -829,11 +826,11 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 38)
+	@Test(priority = 38, enabled = false)
 
 	public void TC9_verfyingisclickedonTomorrowweathercard() {
 
-		String ExpectedUrl="https://development.accuweather.com/en/us/state-college/16801/current-weather/6787_pc";
+		String ExpectedUrl="https://development.accuweather.com/en/us/mc-farland/53558/current-weather/23238_pc";
 
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 
@@ -846,16 +843,17 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
 
 		threeDayForecastPage.isclickedonTomorrowWeather();
+		Assert.assertEquals(getDriver().getCurrentUrl(), ExpectedUrl);
 
 	}
 
 
 
-	@Test(priority = 39)
+	@Test(priority = 39, enabled = false)
 
 	public void TC9_verifyingnavigatingtoCurrentWeatherlocationpage() {
 
-		String ExpectedUrl = "https://development.accuweather.com/en/us/state-college/16801/daily-weather-forecast/6787_pc?day=1";
+		String ExpectedUrl = "https://development.accuweather.com/en/us/mc-farland/53558/daily-weather-forecast/23238_pc?day=1";
 
 		testStart("Navigate to city day forecast page and click on Current weather card and validating URL");
 
@@ -877,7 +875,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 40)
+	@Test(priority = 40, enabled = false)
 
 	public void TC10_VerifyingnArrowsonThreeDayForecast() {
 
@@ -897,7 +895,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 41)
+	@Test(priority = 41, enabled = false)
 
 	public void TC10_VerifyingnForwardactiveandBackArrowinactiveonThreeDayForecast() {
 
@@ -919,7 +917,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 42)
+	@Test(priority = 42, enabled = false)
 
 	public void TC11_VerifyingnFourfuturedays() {
 
@@ -941,7 +939,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 43)
+	@Test(priority = 43, enabled = false)
 
 	public void TC11_VerifyingnbackarrowActive() {
 
@@ -965,7 +963,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 44)
+	@Test(priority = 44, enabled = false)
 
 	public void TC11_VerifyingpastfourdaysDisplayed() {
 
@@ -985,5 +983,45 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 		Assert.assertTrue(threeDayForecastPage.fourWeathercardisDisplayed());
 
+	}*/
+	
+	@Test(priority = 45, enabled = true)
+	public void TC12_isTimeCorrectOnCurrentWeather()
+	{
+		testStart("Verification whether the time is displayed correctly on Current weather card");
+		landingpage.enterZipcodeInSearchField(zipcode);
+		landingpage.clickOnZipcodeSearchIcon();
+		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
+		Assert.assertTrue(threeDayForecastPage.timeValidationOnCurrentWeather());
+	}
+	
+	@Test(priority = 46, enabled = true)
+	public void TC12_isDateCorrectOnTodayCard()
+	{
+		testStart("Verification whether current date is displayed on Today card");
+		landingpage.enterZipcodeInSearchField(zipcode);
+		landingpage.clickOnZipcodeSearchIcon();
+		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
+		Assert.assertTrue(threeDayForecastPage.dateValidationOnTodayCard());
+	}
+	
+	@Test(priority = 47, enabled = true)
+	public void TC12_isDateCorrectOnTonightCard()
+	{
+		testStart("Verification whether current date is displayed on tonight card");
+		landingpage.enterZipcodeInSearchField(zipcode);
+		landingpage.clickOnZipcodeSearchIcon();
+		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
+		Assert.assertTrue(threeDayForecastPage.dateValidationOnTonightCard());
+	}
+	
+	@Test(priority = 48, enabled = true)
+	public void TC12_isDateCorrectOnTomorrowsCard()
+	{
+		testStart("Verification whether current date is displayed on tonight card");
+		landingpage.enterZipcodeInSearchField(zipcode);
+		landingpage.clickOnZipcodeSearchIcon();
+		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
+		Assert.assertTrue(threeDayForecastPage.dateValidationOnTomorrowsCard());
 	}
 }

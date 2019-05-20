@@ -17,13 +17,13 @@ import com.chameleon.selenium.web.WebPageLoaded;
 
 public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
-	String zipcode = "16801";
+	String zipcode = "53558";
 
 	String actualForecastPageTitle;
 
-	String expectedForecastPageTitle = "State College Weather - AccuWeather Forecast for PA 16801";
+	String expectedForecastPageTitle = "Mc Farland Weather - AccuWeather Forecast for WI 53558";
 
-	String currentWeatherPageTitle = "State College Current Weather - AccuWeather Forecast for PA 16801";
+	String currentWeatherPageTitle = "Mc Farland Current Weather - AccuWeather Forecast for WI 53558";
 
 	String expectedTimecolourgrey = "#878787";
 
@@ -43,7 +43,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 1)
+	@Test(priority = 1, enabled = true)
 
 	public void TC1_CityForecastPageCurrentWeatherCardIsDisplayed() throws InterruptedException {
 
@@ -63,7 +63,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = true)
 
 	public void TC1_CityForecastPageTodayCardIsDisplayed() throws InterruptedException {
 
@@ -83,7 +83,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 3)
+	@Test(priority = 3, enabled = true)
 
 	public void TC1_CityForecastPageTonightCardIsDisplayed() throws InterruptedException {
 
@@ -103,7 +103,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 4)
+	@Test(priority = 4, enabled = true)
 
 	public void TC1_CityForecastPageTomorrowCardIsDisplayed() throws InterruptedException {
 
@@ -123,7 +123,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 5)
+	@Test(priority = 5, enabled = true)
 
 	public void TC1_CityForecastPageCurrentWeatherURL() throws InterruptedException {
 
@@ -151,7 +151,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = false)
 
 	public void TC2_Currentweather() {
 
@@ -173,7 +173,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 7)
+	@Test(priority = 7, enabled = false)
 
 	public void TC3_TimeDisplayedingrey() throws InterruptedException {
 
@@ -201,7 +201,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 8)
+	@Test(priority = 8, enabled = false)
 
 	public void TC3_Weatherdisplayed() throws InterruptedException {
 
@@ -225,7 +225,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 9)
+	@Test(priority = 9, enabled = false)
 
 	public void TC3_Temperaturedisplayedinfont() throws InterruptedException {
 
@@ -247,7 +247,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 11)
+	@Test(priority = 11, enabled = false)
 
 	public void TC4_currentWeatherTimeisDisplayedinGrey() {
 
@@ -269,7 +269,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 12)
+	@Test(priority = 12, enabled = false)
 
 	public void TC4_currentWeatherRealFeelTemperatureisDisplayedinGrey() {
 
@@ -291,7 +291,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 13)
+	@Test(priority = 13, enabled = false)
 
 	public void TC4_currentWeatherHumidityisDisplayedinGrey() {
 
@@ -313,7 +313,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 14)
+	@Test(priority = 14, enabled = false)
 
 	public void TC4_currentWeatherUVIndexisDisplayedinGrey() {
 
@@ -335,7 +335,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 15)
+	@Test(priority = 15, enabled = false)
 
 	public void TC4_currentWeatherCloudCoverisDisplayedinGrey() {
 
@@ -357,7 +357,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 16)
+	@Test(priority = 16, enabled = false)
 
 	public void TC4_currentWeatherPressureisDisplayedinGrey() {
 
@@ -379,7 +379,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 17)
+	@Test(priority = 17, enabled = false)
 
 	public void TC4_currentWeatherDewPointisDisplayedinGrey() {
 
@@ -401,7 +401,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 18)
+	@Test(priority = 18, enabled = false)
 
 	public void TC4_currentWeathervisibilityisDisplayedinGrey() {
 
@@ -423,7 +423,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 19)
+	@Test(priority = 19, enabled = false)
 
 	public void TC4_currentWeatherRealfeelShadeIsDisplayedinGrey() {
 
@@ -445,7 +445,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 20)
+	@Test(priority = 20, enabled = false)
 
 	public void TC4_currentWeatherCompassIconIsDisplayedinGrey() {
 
@@ -489,7 +489,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 22)
+	@Test(priority = 22, enabled = false)
 
 	public void TC4_currentWeatherGustsIsDisplayedinGrey() {
 
@@ -511,7 +511,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 23)
+	@Test(priority = 23, enabled = false)
 
 	public void TC5_CurrentConditionDayOrganismRightArrowColor() throws InterruptedException {
 
@@ -541,7 +541,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 24)
+	@Test(priority = 24, enabled = false)
 
 	public void TC5_CurrentConditionDayOrganism() throws InterruptedException {
 
@@ -571,7 +571,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 25)
+	@Test(priority = 25, enabled = false)
 
 	public void TC6_currentDateDisplayed() throws InterruptedException {
 
@@ -601,7 +601,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 26)
+	@Test(priority = 26, enabled = false)
 
 	public void TC6_currentWeatherRightArrowNextToDateIsDisplayed() throws InterruptedException {
 
@@ -631,7 +631,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 27)
+	@Test(priority = 27, enabled = false)
 
 	public void TC7_DayorganismIsDisplayed() throws InterruptedException {
 
@@ -655,7 +655,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 28)
+	@Test(priority = 28, enabled = false)
 
 	public void TC7_DayorganismTitleInUpperCaseISDisplayed() throws InterruptedException {
 
@@ -681,7 +681,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 29)
+	@Test(priority = 29, enabled = false)
 
 	public void TC7_DayorganismTitleTextIsInBoldDisplayed() throws InterruptedException {
 
@@ -707,7 +707,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 30)
+	@Test(priority = 30, enabled = false)
 
 	public void TC7_DayorganismDateIsDisplayed() throws InterruptedException {
 
@@ -733,7 +733,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 31)
+	@Test(priority = 31, enabled = false)
 
 	public void TC7_DayorganismWeatherIconIsDisplayed() throws InterruptedException {
 
@@ -759,7 +759,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 32)
+	@Test(priority = 32, enabled = false)
 
 	public void TC7_DayorganismCurrentTemperatureisInBoldDisplayed() throws InterruptedException {
 
@@ -793,7 +793,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 33)
+	@Test(priority = 33, enabled = false)
 
 	public void TC7_DayorganismReelFeelTemperatureContainsRegisteredTrademark() throws InterruptedException {
 
@@ -817,7 +817,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 34)
+	@Test(priority = 34, enabled = false)
 
 	public void TC7_DayorganismWeatherDescriptionDisplayed() throws InterruptedException {
 
@@ -841,7 +841,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 35)
+	@Test(priority = 35, enabled = false)
 
 	public void TC7_DayorganismCurrentWeatherPrecipitationDisplayed() throws InterruptedException {
 
@@ -865,7 +865,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 36)
+	@Test(priority = 36, enabled = false)
 
 	public void TC7_DayorganismCurrentWeatherMaxUVIdexDisplayed() throws InterruptedException {
 
@@ -891,7 +891,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 37)
+	@Test(priority = 37, enabled = false)
 
 	public void TC7_DayorganismThunderstormsIsDisplayed() throws InterruptedException {
 
@@ -917,7 +917,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 38)
+	@Test(priority = 38, enabled = false)
 
 	public void TC7_DayorganismPrecipitationDisplayed() throws InterruptedException {
 
@@ -943,7 +943,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 39)
+	@Test(priority = 39, enabled = false)
 
 	public void TC7_DayorganismRainDisplayed() throws InterruptedException {
 
@@ -969,7 +969,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 40)
+	@Test(priority = 40, enabled = false)
 
 	public void TC7_DayorganismSnowDisplayed() throws InterruptedException {
 
@@ -995,7 +995,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 41)
+	@Test(priority = 41, enabled = false)
 
 	public void TC7_DayorganismIceDisplayed() throws InterruptedException {
 
@@ -1021,7 +1021,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 42)
+	@Test(priority = 42, enabled = false)
 
 	public void TC7_DayorganismHoursOfPrecipitationDisplayed() throws InterruptedException {
 
@@ -1049,7 +1049,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 43)
+	@Test(priority = 43, enabled = false)
 
 	public void TC7_DayorganismHOursOfRainDisplayed() throws InterruptedException {
 
@@ -1077,7 +1077,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 44)
+	@Test(priority = 44, enabled = false)
 
 	public void TC7_DayorganismWindDisplayed() throws InterruptedException {
 
@@ -1105,7 +1105,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 45)
+	@Test(priority = 45, enabled = false)
 
 	public void TC7_DayorganismCompassIconIsDisplayed() throws InterruptedException {
 
@@ -1133,7 +1133,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 46)
+	@Test(priority = 46, enabled = false)
 
 	public void TC8_NightorganismTitleIsBold() {
 
@@ -1175,7 +1175,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 47)
+	@Test(priority = 47, enabled = false)
 
 	public void TC8_NightorganismTimeDisplayed() {
 
@@ -1217,7 +1217,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 48)
+	@Test(priority = 48, enabled = false)
 
 	public void TC8_NightorganismWeatherIconIsDisplayed() {
 
@@ -1257,7 +1257,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 49)
+	@Test(priority = 49, enabled = false)
 
 	public void TC8_NightorganismCurrentTemperarureIsBold() {
 
@@ -1299,7 +1299,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 50)
+	@Test(priority = 50, enabled = false)
 
 	public void TC8_NightorganismReelFeelTemperatureIsDisplayed() {
 
@@ -1339,7 +1339,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 51)
+	@Test(priority = 51, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherDescriptionIsDisplayed() {
 
@@ -1379,7 +1379,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 52)
+	@Test(priority = 52, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherPrecipitationPercentageIsDisplayed() {
 
@@ -1419,7 +1419,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 53)
+	@Test(priority = 53, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherMaxUVIndexIsInGreyColor() {
 
@@ -1461,7 +1461,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 54)
+	@Test(priority = 54, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherThunderstormsIsInGreyColor() {
 
@@ -1503,7 +1503,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 55)
+	@Test(priority = 55, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherPrecipitationIsInGreyColor() {
 
@@ -1545,7 +1545,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 56)
+	@Test(priority = 56, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherRainIsInGreyColor() {
 
@@ -1587,7 +1587,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 57)
+	@Test(priority = 57, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherSnowIsInGreyColor() {
 
@@ -1629,7 +1629,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 58)
+	@Test(priority = 58, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherIceIsInGreyColor() {
 
@@ -1671,7 +1671,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 59)
+	@Test(priority = 59, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherHoursOfPrecipitationIsInGreyColor() {
 
@@ -1715,7 +1715,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 60)
+	@Test(priority = 60, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherHoursOfRainIsInGreyColor() {
 
@@ -1757,7 +1757,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 61)
+	@Test(priority = 61, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherWindIsInGreyColor() {
 
@@ -1799,7 +1799,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 62)
+	@Test(priority = 62, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherGustsIsInGreyColor() {
 
@@ -1841,7 +1841,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 63)
+	@Test(priority = 63, enabled = false)
 
 	public void TC8_NightorganismCurrentWeatherCompassIconIsInGreyColor() {
 
@@ -1883,7 +1883,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 64)
+	@Test(priority = 64, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismIsDisplayed() {
 
@@ -1927,7 +1927,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 65)
+	@Test(priority = 65, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismTitleIsDisplayed() {
 
@@ -1971,7 +1971,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 66)
+	@Test(priority = 66, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismDateIsDisplayed() {
 
@@ -2015,7 +2015,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 67)
+	@Test(priority = 67, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismTodayHeaderIsDisplayed() {
 
@@ -2059,7 +2059,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 68)
+	@Test(priority = 68, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismNormalHeaderIsDisplayed() {
 
@@ -2103,7 +2103,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 69)
+	@Test(priority = 69, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismRecordHeaderIsDisplayed() {
 
@@ -2147,7 +2147,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 70)
+	@Test(priority = 70, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismLastYearHeaderIsDisplayed() {
 
@@ -2191,7 +2191,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 71)
+	@Test(priority = 71, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismTodayFirstRowValueIsDisplayed() {
 
@@ -2235,7 +2235,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 72)
+	@Test(priority = 72, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismTodaySecondRowValueIsDisplayed() {
 
@@ -2279,7 +2279,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 73)
+	@Test(priority = 73, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismNormalFirstRowValueIsDisplayed() {
 
@@ -2323,7 +2323,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 74)
+	@Test(priority = 74, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismNormalSecondRowValueIsDisplayed() {
 
@@ -2367,7 +2367,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 75)
+	@Test(priority = 75, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismRecordFirstRowValueIsDisplayed() {
 
@@ -2411,7 +2411,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 76)
+	@Test(priority = 76, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismRecordSecondRowValueIsDisplayed() {
 
@@ -2455,7 +2455,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 77)
+	@Test(priority = 77, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismLastYearFirstRowValueIsDisplayed() {
 
@@ -2501,7 +2501,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 78)
+	@Test(priority = 78, enabled = false)
 
 	public void TC13_temperatureHistoryOrganismLastYearSecondRowValueIsDisplayed() {
 
@@ -2547,7 +2547,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 79)
+	@Test(priority = 79, enabled = false)
 
 	public void TC18_ValidateRecentLocationLinkNavigatesToThreeDayForecastPage() {
 
@@ -2589,7 +2589,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 80)
+	@Test(priority = 80, enabled = false)
 
 	public void TC11_Elements_on_Sunrise_and_sunset_organism_Displayed() {
 
@@ -2621,7 +2621,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 81)
+	@Test(priority = 81, enabled = false)
 
 	public void TC11_Sunrise_Title_Displayed_inGrey() {
 
@@ -2669,7 +2669,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 82)
+	@Test(priority = 82, enabled = false)
 
 	public void TC11_Sunrise_Time_Displayed_inBlack() {
 
@@ -2717,7 +2717,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 83)
+	@Test(priority = 83, enabled = false)
 
 	public void TC11_Sunrise_Time_Displayed_inBold() {
 
@@ -2763,7 +2763,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 84)
+	@Test(priority = 84, enabled = false)
 
 	public void TC11_Sunset_Title_Displayed_inGrey() {
 
@@ -2809,7 +2809,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 85)
+	@Test(priority = 85, enabled = false)
 
 	public void TC11_Sunset_Time_Displayed_inBlack() {
 
@@ -2857,7 +2857,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 86)
+	@Test(priority = 86, enabled = false)
 
 	public void TC11_Sunset_Time_Displayed_inBold() {
 
@@ -2903,7 +2903,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 87)
+	@Test(priority = 87, enabled = false)
 
 	public void TC11_Duartion_Title_Displayed_inGrey() {
 
@@ -2949,7 +2949,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 88)
+	@Test(priority = 88, enabled = false)
 
 	public void TC11_Sunrise_Sunset_Duration_Displayed_inBlack() {
 
@@ -2997,7 +2997,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 89)
+	@Test(priority = 89, enabled = false)
 
 	public void TC11_Sunrise_Sunset_Duration_Displayed_inBold() {
 
@@ -3043,7 +3043,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 90)
+	@Test(priority = 90, enabled = false)
 
 	public void TC11_Sunrise_Sunset_sunIcondisplayed() {
 
@@ -3075,7 +3075,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 91)
+	@Test(priority = 91, enabled = false)
 
 	public void T12_Moonrise_Title_Displayed_inGrey() {
 
@@ -3123,7 +3123,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 92)
+	@Test(priority = 92, enabled = false)
 
 	public void TC12_Moonrise_Time_Displayed_inBlack() {
 
@@ -3171,7 +3171,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 93)
+	@Test(priority = 93, enabled = false)
 
 	public void TC12_Moonrise_Time_Displayed_inBold() {
 
@@ -3215,7 +3215,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 94)
+	@Test(priority = 94, enabled = false)
 
 	public void T12_Moonset_Title_Displayed_inGrey() {
 
@@ -3261,7 +3261,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 95)
+	@Test(priority = 95, enabled = false)
 
 	public void TC12_Moonset_Time_Displayed_inBlack() {
 
@@ -3307,7 +3307,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 96)
+	@Test(priority = 96, enabled = false)
 
 	public void TC12_Moonset_Time_Displayed_inBold() {
 
@@ -3351,7 +3351,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 97)
+	@Test(priority = 97, enabled = false)
 
 	public void TC12_Moonrise_Moonset_Duartion_Title_Displayed_inGrey() {
 
@@ -3397,7 +3397,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 98)
+	@Test(priority = 98, enabled = false)
 
 	public void TC12_Moonrise_Moonset_Duration_Displayed_inBlack() {
 
@@ -3447,7 +3447,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 99)
+	@Test(priority = 99, enabled = false)
 
 	public void TC12_Moonrise_Moonset_Duration_Displayed_inBold() {
 
@@ -3493,7 +3493,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 100)
+	@Test(priority = 100, enabled = false)
 
 	public void TC13_More_Historical_Weather_Datadisplayed() {
 
