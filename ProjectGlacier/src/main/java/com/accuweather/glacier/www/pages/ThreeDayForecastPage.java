@@ -17,6 +17,7 @@ import com.accuweather.glacier.BasePage;
 import com.chameleon.selenium.web.WebPageLoaded;
 
 import com.chameleon.selenium.web.elements.WebElement;
+import com.chameleon.utils.date.SimpleDate;
 
 
 
@@ -189,6 +190,8 @@ public class ThreeDayForecastPage extends BasePage {
 	private By backarrowhighlighted = By.cssSelector(
 
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2) > svg > path");
+	
+	SimpleDate currentDate = new SimpleDate();
 
 
 
@@ -232,6 +235,46 @@ public class ThreeDayForecastPage extends BasePage {
 
 		return getDriver().findElement(bycurrentWeatherCard).isDisplayed();
 
+	}
+	
+	public Boolean timeValidationOnCurrentWeather()
+	{
+		WebPageLoaded.isDomInteractive();
+		if(getDriver().findElement(bycurrentTime).getText().equals(currentDate.getCurrentTime()))
+			return true;
+		else
+			return false;
+		
+	}
+	
+	public Boolean dateValidationOnTodayCard()
+	{
+		WebPageLoaded.isDomInteractive();
+		if(getDriver().findElement(bytodaycardcurrentDate).getText().equals(SimpleDate.getCurrentDate("M/d")))
+			return true;
+		else
+			return false;
+		
+	}
+	
+	public Boolean dateValidationOnTonightCard()
+	{
+		WebPageLoaded.isDomInteractive();
+		if(getDriver().findElement(bytonightcardCurrentDate).getText().equals(SimpleDate.getCurrentDate("M/d")))
+			return true;
+		else
+			return false;
+		
+	}
+	
+	public Boolean dateValidationOnTomorrowsCard()
+	{
+		WebPageLoaded.isDomInteractive();
+		if(getDriver().findElement(byTomorrowcardDate).getText().equals(currentDate.getTomorrowDate("M/d")))
+			return true;
+		else
+			return false;
+		
 	}
 
 
@@ -897,5 +940,9 @@ public class ThreeDayForecastPage extends BasePage {
 		return builder.toString().toUpperCase();
 
 	}
+
+
+
+	
 
 }
