@@ -14,7 +14,9 @@ import com.chameleon.selenium.web.elements.WebTextbox;
 import com.chameleon.utils.Constants;
 
 public class NavigationBar extends BasePage {
-    private By byLogo = By.cssSelector("div > div.main-menu > div.logo-wrapper > a > svg");
+    //private By byLogo = By.cssSelector("div > div.main-menu > div.logo-wrapper > a > svg");
+    private By byLogo = By.cssSelector("div.template-root > div.component-sticky-container.header > div > div.main-menu > div.logo-wrapper > div > a");
+
     //private By byRadarMaps = By.id("navRadar");
     //private By byRadarMaps = By.xpath("//li[contains(@id,'navRadar')]/a/span");
     private By byRadarMaps = By.cssSelector("div.main-menu > ul > li:nth-child(1)");
