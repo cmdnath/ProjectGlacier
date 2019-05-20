@@ -74,11 +74,7 @@ public class DailyForecastsHelper {
 	  
 	}
 	  
-	  
-	 
-	  
-	
-	  private static Headline parseLocations(final Headline locations) { for
+		  private static Headline parseLocations(final Headline locations) { for
 			 (Headline location : Arrays.asList(locations)) { return location; } return
 			 null; }
 	 
