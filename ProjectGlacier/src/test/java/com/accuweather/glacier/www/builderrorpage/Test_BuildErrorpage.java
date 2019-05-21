@@ -59,14 +59,14 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 	}
 	
 	@Test(priority=4,enabled = true)
-	public void TC3_navigatingtoErrorPagevalidatingerrorText() throws InterruptedException, URISyntaxException {
+	public void TC3_navigatingToErrorPageValidatingErrorText() throws InterruptedException, URISyntaxException {
         testStart("Navigating to the Error Page and Validating the ERROR Text Displayed");
 		String appendedurl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String ErrorTxetDisplayed=erropage.errorpageTextDisplayed();
+		String errortextDisplayed=erropage.errorpageTextDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-        Assert.assertEquals(ErrorTxetDisplayed, expected400ErrorpageErrorText,"Error Type displayed is not matching ");
+        Assert.assertEquals(errortextDisplayed, expected400ErrorpageErrorText,"Error Type displayed is not matching ");
 		
 	}
 	

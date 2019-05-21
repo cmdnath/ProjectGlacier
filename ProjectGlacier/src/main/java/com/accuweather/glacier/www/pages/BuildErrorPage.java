@@ -15,9 +15,6 @@ import com.chameleon.selenium.web.elements.WebElement;
 public class BuildErrorPage extends BasePage
 {
 	
-	//body > div.template-root > div.error-page
-	//CTA body > div.template-root > div.error-page > div > a > span
-	
 	
 	private By byerrorPage = By.cssSelector("body > div.template-root > div.error-page");
 	private By bybackgroundimage=By.cssSelector("body > div.template-root > div.error-page > div > div.error-code");	
@@ -100,8 +97,8 @@ public class BuildErrorPage extends BasePage
 	public String CTABacktoAccuweathercolourDisplayed()
 	{
 		WebPageLoaded.isDomInteractive();
-		String CTATextcolour=getDriver().findElement(byCTABacktoAccuweather).getCssValue("color");
-	      String actualcolour=Color.fromString(CTATextcolour).asHex();
+		String ctaTextColour=getDriver().findElement(byCTABacktoAccuweather).getCssValue("color");
+	      String actualcolour=Color.fromString(ctaTextColour).asHex();
 		return actualcolour;
 		
 	}
