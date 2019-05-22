@@ -631,7 +631,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 27, enabled = false)
+	@Test(priority = 27, enabled = true)
 
 	public void TC7_DayorganismIsDisplayed() throws InterruptedException {
 
