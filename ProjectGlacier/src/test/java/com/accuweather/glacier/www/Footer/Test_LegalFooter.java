@@ -1,7 +1,5 @@
 package com.accuweather.glacier.www.Footer;
 
-import java.util.Calendar;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -41,7 +39,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 	private LandingPage landingPage = new LandingPage();
 	private LegalFooter legalFooter = new LegalFooter();
 
-	@Test(priority=1, enabled = true)
+	@Test(priority=1)
 	public void TC1_verifyPresenceOfTermsOfUseInFooter()
 	{
 		testStart("Validate whether Terms of Use link is present in footer");
@@ -52,7 +50,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertTrue(legalFooter.isTermsOfUsePresent());
 	}
 	
-	@Test(priority=2, enabled = true)
+	@Test(priority=2)
 	public void TC1_verifyTheTextOfTermsOfUseInFooter()
 	{
 		testStart("Validate whether Terms of Use is spelled correctly");
@@ -63,7 +61,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTermsOfUseText(),TERMS_OF_USE);
 	}
 	
-	@Test(priority=3, enabled = true)
+	@Test(priority=3)
 	public void TC2_verifyTitleOfTermsOfUse()
 	{
 		testStart("Validate the title of Terms Of use page");
@@ -74,7 +72,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTitleOfTermsOfUse(),TERMS_OF_USE_TITLE);
 	}
 	
-	@Test(priority=4, enabled = true)
+	@Test(priority=4)
 	public void TC2_verifyURLOfTermsOfUse()
 	{
 		testStart("Validate whether the URL of Terms Of use page is correct");
@@ -85,7 +83,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getURLOfTermsOfUse(),TERMS_OF_USE_URL);
 	}
 	
-	@Test(priority=5, enabled = true)
+	@Test(priority=5)
 	public void TC2_verifyTermsOfUseTab()
 	{
 		testStart("Validate the name of Terms Of use tab");
@@ -96,7 +94,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getNameOfTermsOfUseTab(),TERMS_OF_USE.toUpperCase());
 	}
 	
-	@Test(priority=6, enabled = true)
+	@Test(priority=6)
 	public void TC2_verifyBorderColorOfTermsOfUseTab()
 	{
 		testStart("Validate whether the color of Terms of Use tab is Orange");
@@ -107,7 +105,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTopBorderColor_Of_TermsOfUseTab(),ACTIVE_TAB_COLOR);
 	}
 	
-	@Test(priority=7, enabled = true)
+	@Test(priority=7)
 	public void TC2_verifyHeadingOfTermsOfUseTab()
 	{
 		testStart("Validate the Heading of Terms of Use content");
@@ -118,7 +116,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getHeadingOfTermsOfUse(),TERMS_OF_USE_CONTENT_HEADING);
 	}
 	
-	@Test(priority=8, enabled = true)
+	@Test(priority=8)
 	public void TC3_verifyPresenceOfPrivacyPolicyInFooter()
 	{
 		testStart("Validate whether Privacy Policy link is present in footer");
@@ -129,7 +127,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertTrue(legalFooter.isPrivacyPolicyPresent());
 	}
 	
-	@Test(priority=9, enabled = true)
+	@Test(priority=9)
 	public void TC3_verifyTheTextOfPrivacyPolicyInFooter()
 	{
 		testStart("Validate whether Privacy Policy is spelled correctly");
@@ -140,7 +138,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getPrivacyPolicyText(),PRIVACY_POLICY);
 	}
 	
-	@Test(priority=10, enabled = true)
+	@Test(priority=10)
 	public void TC4_verifyTitleOfPrivacyPolicy()
 	{
 		testStart("Validate the title of Terms Of use page");
@@ -151,7 +149,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTitleOfPrivacyPolicy(),PRIVACY_POLICY_TITLE);
 	}
 	
-	@Test(priority=11, enabled = true)
+	@Test(priority=11)
 	public void TC4_verifyURLOfPrivacyPolicy()
 	{
 		testStart("Validate whether the URL of Privacy Policy page is correct");
@@ -162,7 +160,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getURLOfPrivacyPolicy(),PRIVACY_POLICY_URL);
 	}
 	
-	@Test(priority=12, enabled = true)
+	@Test(priority=12)
 	public void TC4_verifyPrivacyPolicyTab()
 	{
 		testStart("Validate the name of Privacy Policy tab");
@@ -173,7 +171,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getNameOfPrivacyPolicyTab(),PRIVACY_POLICY.toUpperCase());
 	}
 	
-	@Test(priority=13, enabled = true)
+	@Test(priority=13)
 	public void TC4_verifyBorderColorOfPrivacyPolicyTab()
 	{
 		testStart("Validate whether the color of Privacy Policy tab is Orange");
@@ -184,7 +182,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTopBorderColor_Of_PrivacyPolicyTab(),ACTIVE_TAB_COLOR);
 	}
 	
-	@Test(priority=14, enabled = true)
+	@Test(priority=14)
 	public void TC4_verifyHeadingOfPrivacyPolicyTab()
 	{
 		testStart("Validate the Heading of Privacy Policy content");
@@ -195,7 +193,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getHeadingOfPrivacyPolicy(),PRIVACY_POLICY_CONTENT_HEADING);
 	}
 	
-	@Test(priority=15, enabled = true)
+	@Test(priority=15)
 	public void TC5_verifyPresenceOfCookiePolicyInFooter()
 	{
 		testStart("Validate whether Cookie Policy link is present in footer");
@@ -206,7 +204,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertTrue(legalFooter.isCookiePolicyPresent());
 	}
 	
-	@Test(priority=16, enabled = true)
+	@Test(priority=16)
 	public void TC5_verifyTheTextOfCookiePolicyInFooter()
 	{
 		testStart("Validate whether Cookie Policy is spelled correctly");
@@ -217,7 +215,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getCookiePolicyText(),COOKIE_POLICY);
 	}
 	
-	@Test(priority=17, enabled = true)
+	@Test(priority=17)
 	public void TC6_verifyTitleOfCookiePolicy()
 	{
 		testStart("Validate the title of Cookie Policy page");
@@ -228,7 +226,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTitleOfCookiePolicy(),COOKIE_POLICY_TITLE);
 	}
 	
-	@Test(priority=18, enabled = true)
+	@Test(priority=18)
 	public void TC6_verifyURLOfCookiePolicy()
 	{
 		testStart("Validate whether the URL of Cookie Policy page is correct");
@@ -239,7 +237,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getURLOfCookiePolicy(),COOKIE_POLICY_URL);
 	}
 	
-	@Test(priority=19, enabled = true)
+	@Test(priority=19)
 	public void TC6_verifyCookiePolicyTab()
 	{
 		testStart("Validate the name of Cookie Policy tab");
@@ -250,7 +248,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getNameOfCookiePolicyTab(),COOKIE_POLICY.toUpperCase());
 	}
 	
-	@Test(priority=20, enabled = true)
+	@Test(priority=20)
 	public void TC6_verifyBorderColorOfCookiePolicyTab()
 	{
 		testStart("Validate whether the color of Cookie Policy tab is Orange");
@@ -261,7 +259,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTopBorderColor_Of_CookiePolicyTab(),ACTIVE_TAB_COLOR);
 	}
 	
-	@Test(priority=21, enabled = true)
+	@Test(priority=21)
 	public void TC6_verifyHeadingOfCookiePolicyTab()
 	{
 		testStart("Validate the Heading of Cookie Policy content");
@@ -272,7 +270,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getHeadingOfCookiePolicy(),COOKIE_POLICY_CONTENT_HEADING);
 	}
 	
-	@Test(priority=22, enabled = true)
+	@Test(priority=22)
 	public void TC7_verifyPresenceOfTAGDisclosureInFooter()
 	{
 		testStart("Validate whether TAG Dsiclosure link is present in footer");
@@ -283,7 +281,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertTrue(legalFooter.isTAGDisclosurePresent());
 	}
 	
-	@Test(priority=23, enabled = true)
+	@Test(priority=23)
 	public void TC7_verifyTheTextOfTAGDisclosureInFooter()
 	{
 		testStart("Validate whether TAG Disclosure is spelled correctly");
@@ -294,7 +292,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTAGDisclosureText(),TAG_DISCLOSURE);
 	}
 	
-	@Test(priority=24, enabled = true)
+	@Test(priority=24)
 	public void TC8_verifyTitleOfTAGDisclosure()
 	{
 		testStart("Validate the title of TAG Disclosure page");
@@ -305,7 +303,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTitleOfTAGDisclosure(),TAG_DISCLOSURE_TITLE);
 	}
 	
-	@Test(priority=25, enabled = true)
+	@Test(priority=25)
 	public void TC8_verifyURLOfTAGDisclosure()
 	{
 		testStart("Validate whether the URL of TAG Disclosure page is correct");
@@ -316,7 +314,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getURLOfTAGDisclosure(),TAG_DISCLOSURE_URL);
 	}
 	
-	@Test(priority=26, enabled = true)
+	@Test(priority=26)
 	public void TC8_verifyTAGDisclosureTab()
 	{
 		testStart("Validate the name of TAG Disclosure tab");
@@ -327,7 +325,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getNameOfTAGDisclosureTab(),TAG_DISCLOSURE.toUpperCase());
 	}
 	
-	@Test(priority=27, enabled = true)
+	@Test(priority=27)
 	public void TC8_verifyBorderColorOfTAGDisclosureTab()
 	{
 		testStart("Validate whether the color of TAG Disclosure tab is Orange");
@@ -338,7 +336,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTopBorderColor_Of_TAGDisclosureTab(),ACTIVE_TAB_COLOR);
 	}
 	
-	@Test(priority=28, enabled = true)
+	@Test(priority=28)
 	public void TC8_verifyHeadingOfTAGDisclosureTab()
 	{
 		testStart("Validate the Heading of TAG Disclosure content");
@@ -349,7 +347,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getHeadingOfTAGDisclosure(),TAG_DISCLOSURE_CONTENT_HEADING);
 	}
 	
-	@Test(priority=29, enabled = true)
+	@Test(priority=29)
 	public void TC9_verifyCopyrightInformation()
 	{
 		testStart("Validate the copyright information content");
@@ -361,7 +359,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		
 	}
 	
-	@Test(priority=30, enabled = true)
+	@Test(priority=30)
 	public void TC9_verifyRegisteredTrademarksInformation()
 	{
 		testStart("Validate the registered trademarks content");
@@ -373,7 +371,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		
 	}
 	
-	@Test(priority=31, enabled = true)
+	@Test(priority=31)
 	public void TC9_verifyAllRightsReservedInformation()
 	{
 		testStart("Validate the right reserved content");
@@ -385,7 +383,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		
 	}
 	
-	@Test(priority=32, enabled = true)
+	@Test(priority=32)
 	public void TC9_verifyYearInCopyrightInformation()
 	{
 		testStart("Validate the copyright information content");
@@ -393,7 +391,18 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		landingPage.clickOnZipcodeSearchIcon();
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(EXPECTED_LANDING_PAGE_TITLE);
-		Assert.assertEquals(legalFooter.getCopyRightInformation().substring(2,6).trim(),Calendar.getInstance().get(Calendar.YEAR)+"");		
+		Assert.assertEquals(legalFooter.getYearInCopyRightInformation(),legalFooter.getCurrentYear());		
+	}
+	
+	@Test(priority=33)
+	public void TC10_verifyPresenceOfFooterWhenLanguageChanged()
+	{
+		testStart("Validate the presence of footer when language changed");
+		landingPage.enterZipcodeInSearchField(ZIPCODE);
+		landingPage.clickOnZipcodeSearchIcon();
+		waitUntilElementIsDisplayedOrClickable();
+		waitUntilWindowExistsWithTitle(EXPECTED_LANDING_PAGE_TITLE);
+		Assert.assertTrue(legalFooter.legalFooterStatusWhenLangChanged());
 	}
 
 }

@@ -10,6 +10,7 @@ import com.accuweather.glacier.www.pages.ForeCastWeatherPage;
 import com.accuweather.glacier.www.pages.LandingPage;
 import com.accuweather.glacier.www.pages.MonthlyForeCastPage;
 import com.accuweather.glacier.www.pages.ThreeDayForecastPage;
+import com.chameleon.selenium.web.WebPageLoaded;
 import com.chameleon.utils.date.SimpleDate;
 
 
@@ -41,7 +42,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 	
 
 
-/*
+
 	@Test(priority = 1)
 
 	public void TC1_nowTabOnCityForecastPage() {
@@ -983,7 +984,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 		Assert.assertTrue(threeDayForecastPage.fourWeathercardisDisplayed());
 
-	}*/
+	}
 	
 	@Test(priority = 45, enabled = true)
 	public void TC12_isTimeCorrectOnCurrentWeather()

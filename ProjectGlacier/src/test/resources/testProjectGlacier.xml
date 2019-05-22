@@ -26,12 +26,5 @@
 			<package name="com.accuweather.glacier.www.threedayforecast.*" />
 		</packages>
 	</test>
-	
-	<test name="Monthly Forecasts Tests In Firefox Browser" >
-	<parameter name="browserUnderTest" value="firefox" />
-		<packages>
-			<package name="com.accuweather.glacier.www.monthlyforecast.*" />
-		</packages>
-	</test>
  
 </suite>

@@ -1,5 +1,6 @@
 package com.accuweather.glacier.www.pages;
 
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -16,6 +17,7 @@ public class LegalFooter extends BasePage{
 	private By byRegisteredTrademarks = By.cssSelector("body > div.template-root > div.base-footer.is-en > div.footer-legalese.footer-legalese > div.footer-copyright > span:nth-child(2)");
 	private By byRightsReserved = By.cssSelector("body > div.template-root > div.base-footer.is-en > div.footer-legalese.footer-legalese > div.footer-copyright > span:nth-child(3)");
 	private By byTermsOfUse = By.cssSelector("body > div.template-root > div.base-footer.is-en > div.footer-legalese.footer-legalese > div.footer-terms > a:nth-child(1)");
+	private By byTermsOfUseSpanish = By.cssSelector("body > div.template-root > div.base-footer > div > div.footer-terms > a:nth-child(1)");
 	private By byPrivacyPolicy = By.cssSelector("body > div.template-root > div.base-footer.is-en > div.footer-legalese.footer-legalese > div.footer-terms > a:nth-child(2)");
 	private By byCookiePolicy = By.cssSelector("body > div.template-root > div.base-footer.is-en > div.footer-legalese.footer-legalese > div.footer-terms > a:nth-child(3)");
 	private By byTAGDisclosure = By.cssSelector("body > div.template-root > div.base-footer.is-en > div.footer-legalese.footer-legalese > div.footer-terms > a:nth-child(4)");
@@ -27,6 +29,10 @@ public class LegalFooter extends BasePage{
 	private By byPrivacyPolicyHeading = By.cssSelector("body > div.template-root > div.page-content > div > div > h2");
 	private By byTAGDisclosureHeading = By.cssSelector("body > div.template-root > div.page-content > div > div > h2");
 	private By byCookiePolicyHeading = By.cssSelector("body > div.template-root > div.page-content > div > div > h2");
+	private By bySettingsButton = By.cssSelector("body > div.template-root > div.component-sticky-container.header > div > div.main-menu > div.header-right-container > div.settings-button");
+	private By byLanguageSelector = By.cssSelector("body > div.template-root > div.component-sticky-container.header > div > div.utility-bar > div > div > div.dropdown-select.locale-dropdown.fade-in-left > div.dropdown-select-wrapper > div");
+	private By bySpanish = By.cssSelector("body > div.template-root > div.component-sticky-container.header > div > div.utility-bar > div > div > div.dropdown-select.locale-dropdown.fade-in-left > div.dropdown-content > div:nth-child(3)"); 
+	
 	
 	/**
 	 * Method to validate if Terms Of Use link is present on Footer
@@ -571,5 +577,39 @@ public class LegalFooter extends BasePage{
 		copyRightInfo.syncVisible(30);
 		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return copyRightInfo.getText();
+	}
+	
+	/**
+	 * Method to get the year in copyright information
+	 * @author HFARAZ
+	 * @return - String: value of the year in copyright information
+	 * */
+	public String getYearInCopyRightInformation()
+	{
+		return getCopyRightInformation().substring(2,6).trim();
+	}
+	
+	/**
+	 * Method to get the current year
+	 * @author HFARAZ
+	 * @return String: value of the current year
+	 * */
+	public String getCurrentYear()
+	{
+		return Calendar.getInstance().get(Calendar.YEAR)+"";
+	}
+	
+	/**
+	 * Method to change the site language to Spanish
+	 * @author HFARAZ
+	 * */
+	public Boolean legalFooterStatusWhenLangChanged()
+	{
+		WebPageLoaded.isDomInteractive();
+		getDriver().findElement(bySettingsButton).click();
+		getDriver().findElement(byLanguageSelector).click();
+		getDriver().findElement(bySpanish).click();
+		WebPageLoaded.isDomInteractive();
+		return getDriver().findElement(byTermsOfUseSpanish).isDisplayed();
 	}
 }
