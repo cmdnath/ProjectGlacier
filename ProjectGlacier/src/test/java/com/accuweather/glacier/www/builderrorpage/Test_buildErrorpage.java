@@ -10,7 +10,7 @@ import com.accuweather.glacier.www.pages.BuildErrorPage;
 import com.chameleon.selenium.web.WebPageLoaded;
 
 
-public class Test_BuildErrorpage extends AccuWeatherBaseTest{
+public class Test_buildErrorpage extends AccuWeatherBaseTest{
 	
 	String expectedAccuweatherUrl="https://development.accuweather.com/";
 	String expected400ErrorpageURL= "https://development.accuweather.com/tt";
@@ -29,9 +29,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 	@Test(priority = 1 ,enabled = true)
 	public void TC1_navigatingtobuild400ErrorPage() throws InterruptedException, URISyntaxException {
         testStart("Navigating to the Error Page");
-		String appendedurl=erropage.addtexttoEndURL();
+		String appendedUrl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);
-		getDriver().navigate().to(appendedurl);
+		getDriver().navigate().to(appendedUrl);
 		WebPageLoaded.isDomInteractive(4000);		
 		Assert.assertEquals(getDriver().getCurrentUrl(), expected400ErrorpageURL,"User not navigated to 400 Error Page");
 	}
@@ -42,9 +42,8 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.addtexttoEndURL();			
 		getDriver().navigate().to(appendedurl);
 		WebPageLoaded.isDomInteractive(4000);
-		String Actualimagedisplayed=erropage.errorpagebackgroundimage();
-		System.out.println("Actuall image displayed is"+Actualimagedisplayed);
-		Assert.assertEquals(Actualimagedisplayed, expectedimageurl,"Cloud Backgroud image displayed is not matching");
+		String actualImageDisplayed=erropage.errorpagebackgroundimage();
+		Assert.assertEquals(actualImageDisplayed, expectedimageurl,"Cloud Backgroud image displayed is not matching");
 		
 	}
 	
@@ -53,9 +52,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
         testStart("Navigating to the Error Page and Validating the ERROR Type Displayed ");
 		String appendedurl=erropage.addtexttoEndURL();
 		getDriver().navigate().to(appendedurl);
-		String ErrorTypeDisplayed=erropage.errortypeDisplayed();
+		String errorTypeDisplayed=erropage.errortypeDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-		Assert.assertEquals(ErrorTypeDisplayed, expected400ErrorpageType,"Error Type displayed is not matching ");
+		Assert.assertEquals(errorTypeDisplayed, expected400ErrorpageType,"Error Type displayed is not matching ");
 	}
 	
 	@Test(priority=4,enabled = true)
@@ -64,9 +63,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String errortextDisplayed=erropage.errorpageTextDisplayed();
+		String errorTextDisplayed=erropage.errorpageTextDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-        Assert.assertEquals(errortextDisplayed, expected400ErrorpageErrorText,"Error Type displayed is not matching ");
+        Assert.assertEquals(errorTextDisplayed, expected400ErrorpageErrorText,"Error Type displayed is not matching ");
 		
 	}
 	
@@ -76,27 +75,27 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String ActualCTATextdisplayed=erropage.CTABacktoAccuweatheisDisplayed();
+		String actualctaTextdisplayed=erropage.CTABacktoAccuweatheisDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-		Assert.assertEquals(ActualCTATextdisplayed, expectedCTAtext,"CTA Text (Back to AccuWeather) displayed not matching");
+		Assert.assertEquals(actualctaTextdisplayed, expectedCTAtext,"CTA Text (Back to AccuWeather) displayed not matching");
 	}
 	
 	@Test(priority=6,enabled = true)
 	public void TC4_errorpageCTAtextDisplayedinOrange() throws InterruptedException, URISyntaxException {
 		testStart("Navigating to the Error Page and verying cloud background displayed");
-		String appendedurl=erropage.addtexttoEndURL();
+		String appendedUrl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);	
-		getDriver().navigate().to(appendedurl);
-		String ActualCTATextcolourdisplayed=erropage.CTABacktoAccuweathercolourDisplayed();
-		Assert.assertEquals(ActualCTATextcolourdisplayed, ORANGE_COLOR, "CTA Text Back to AcuuWeater not displayed in Orange colour");
+		getDriver().navigate().to(appendedUrl);
+		String actualctatextcolourdisplayed=erropage.CTABacktoAccuweathercolourDisplayed();
+		Assert.assertEquals(actualctatextcolourdisplayed, ORANGE_COLOR, "CTA Text Back to AcuuWeater not displayed in Orange colour");
 	}
 	
 	@Test(priority=7,enabled = true)
 	public void TC4_errorpageCTAtextDisplayedwitharrow() throws InterruptedException, URISyntaxException {
 		testStart("Navigating to the Error Page and verying cloud background dislayed");
-		String appendedurl=erropage.addtexttoEndURL();
+		String appendedUrl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);	
-		getDriver().navigate().to(appendedurl);
+		getDriver().navigate().to(appendedUrl);
 		WebPageLoaded.isDomInteractive(4000);
 		Assert.assertTrue(erropage.CTABacktoAccuweatherwithArrowDisplayed());
 	}
@@ -104,9 +103,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 	@Test(priority=8,enabled = true)
 	public void TC5_errorpageCTABacktoAccuweatherisclicked() throws InterruptedException, URISyntaxException {
 		testStart("Navigating to the Error Page and verying cloud background dislayed");
-		String appendedurl=erropage.addtexttoEndURL();
+		String appendeUrl=erropage.addtexttoEndURL();
 		WebPageLoaded.isDomInteractive(4000);	
-		getDriver().navigate().to(appendedurl);
+		getDriver().navigate().to(appendeUrl);
 		WebPageLoaded.isDomInteractive(4000);	
 		erropage.CTABacktoAccuweatherisClicked();
 		WebPageLoaded.isDomInteractive(4000);
@@ -116,9 +115,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 	@Test(priority=9,enabled = true)
 	public void TC6_navigatingtoBuild500ErrorPage() throws InterruptedException, URISyntaxException {
         testStart("Navigating to the 500 Error Page");
-		String appendedurl=erropage.apendtexttoEndURL2();
+		String appendedUrl=erropage.apendtexttoEndURL2();
 		WebPageLoaded.isDomInteractive(4000);	
-		getDriver().navigate().to(appendedurl);
+		getDriver().navigate().to(appendedUrl);
 		WebPageLoaded.isDomInteractive(4000);	
 		Assert.assertEquals(getDriver().getCurrentUrl(), expected500ErrorpageURL,"User not navigated to 500 Error Page");
 	}
@@ -129,9 +128,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.apendtexttoEndURL2();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String ErrorTypeDisplayed=erropage.errortypeDisplayed();
+		String errorTypeDisplayed=erropage.errortypeDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-		Assert.assertEquals(ErrorTypeDisplayed, expected500ErrorpageType,"Error Type 500 displayed is not matching ");
+		Assert.assertEquals(errorTypeDisplayed, expected500ErrorpageType,"Error Type 500 displayed is not matching ");
 	}
 	
 	@Test(priority=11,enabled = true)
@@ -140,9 +139,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.apendtexttoEndURL2();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String ErrorTextDisplayed=erropage.errorpageTextDisplayed();
+		String errorTextDisplayed=erropage.errorpageTextDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-		Assert.assertEquals(ErrorTextDisplayed, expected500ErrorpageErrorText,"Error Type 500 displayed is not matching ");
+		Assert.assertEquals(errorTextDisplayed, expected500ErrorpageErrorText,"Error Type 500 displayed is not matching ");
 	}
 	
 	@Test(priority=12,enabled = true)
@@ -151,8 +150,8 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.apendtexttoEndURL2();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String ActualCTATextdisplayed=erropage.CTABacktoAccuweatheisDisplayed();WebPageLoaded.isDomInteractive(4000);
-		Assert.assertEquals(ActualCTATextdisplayed, expectedCTAtext,"CTA Text (Back to AccuWeather) displayed not matching");
+		String actualCTATextdisplayed=erropage.CTABacktoAccuweatheisDisplayed();WebPageLoaded.isDomInteractive(4000);
+		Assert.assertEquals(actualCTATextdisplayed, expectedCTAtext,"CTA Text (Back to AccuWeather) displayed not matching");
 	}
 	
 	@Test(priority=13,enabled = true)
@@ -161,9 +160,9 @@ public class Test_BuildErrorpage extends AccuWeatherBaseTest{
 		String appendedurl=erropage.apendtexttoEndURL2();
 		WebPageLoaded.isDomInteractive(4000);	
 		getDriver().navigate().to(appendedurl);
-		String ActualCTATextcolourdisplayed=erropage.CTABacktoAccuweathercolourDisplayed();
+		String actualCTATextcolourdisplayed=erropage.CTABacktoAccuweathercolourDisplayed();
 		WebPageLoaded.isDomInteractive(4000);
-		Assert.assertEquals(ActualCTATextcolourdisplayed, ORANGE_COLOR, "CTA Text Back to AcuuWeater not displayed in Orange colour");
+		Assert.assertEquals(actualCTATextcolourdisplayed, ORANGE_COLOR, "CTA Text Back to AcuuWeater not displayed in Orange colour");
 	}
 	
 	@Test(priority=14,enabled = true)

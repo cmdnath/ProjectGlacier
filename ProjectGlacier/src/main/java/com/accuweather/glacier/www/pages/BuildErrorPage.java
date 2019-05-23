@@ -17,7 +17,6 @@ public class BuildErrorPage extends BasePage
 	
 	
 	private By byerrorPage = By.cssSelector("body > div.template-root > div.error-page");
-	private By bybackgroundimage=By.cssSelector("body > div.template-root > div.error-page > div > div.error-code");	
 	private By byerrorText=By.cssSelector("body > div.template-root > div.error-page > div > div.text");
 	private By byerrorType =By.cssSelector("body > div.template-root > div.error-page > div > div.error-code");
 	private By byCTABacktoAccuweather=By.cssSelector("body > div.template-root > div.error-page > div > a");
@@ -30,8 +29,6 @@ public class BuildErrorPage extends BasePage
 	 * 
 	 * 
 	 */
-
-	
 	
 	public String addtexttoEndURL() throws URISyntaxException
 	{
@@ -87,8 +84,8 @@ public class BuildErrorPage extends BasePage
 	public String CTABacktoAccuweatheisDisplayed()
 	{
 		WebPageLoaded.isDomInteractive();
-		String CTAText=getDriver().findElement(byCTABacktoAccuweather).getText();
-		return CTAText;
+		String ctaText=getDriver().findElement(byCTABacktoAccuweather).getText();
+		return ctaText;
 		
 	}
 	
@@ -98,8 +95,8 @@ public class BuildErrorPage extends BasePage
 	{
 		WebPageLoaded.isDomInteractive();
 		String ctaTextColour=getDriver().findElement(byCTABacktoAccuweather).getCssValue("color");
-	      String actualcolour=Color.fromString(ctaTextColour).asHex();
-		return actualcolour;
+	    String actualColour=Color.fromString(ctaTextColour).asHex();
+		return actualColour;
 		
 	}
 	
