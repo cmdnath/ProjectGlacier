@@ -78,7 +78,7 @@ public class UniversalFooterPage extends BasePage {
 	private By byfooterBreadCrumps = By.cssSelector("body > div.template-root > div.breadcrumbs-wrapper");
 
 	/*
-	 *
+	 * @ author Sandhya Rani
 	 * Method to verify footer is displayed for English Language
 	 */
 
@@ -89,7 +89,7 @@ public class UniversalFooterPage extends BasePage {
 	}
 
 	/*
-	 *
+	 * @author Sandhya Rani 
 	 * Method to scroll down the page till the bottom of page by getting x and y
 	 * co-ordinates
 	 */
@@ -101,7 +101,7 @@ public class UniversalFooterPage extends BasePage {
 	}
 
 	/*
-	 * 
+	 * @author Sandhya Rani 
 	 * Method to switch the control to new tab and extracting landing page URL
 	 */
 
@@ -114,7 +114,7 @@ public class UniversalFooterPage extends BasePage {
 
 	}
 	/*
-	 *
+	 *@author Sandhya Rani 
 	 * Method to verify footer displayed with following Headers
 	 * "Company","Products & Services" "Apps & Download" and "Subscription Services"
 	 */
