@@ -1,6 +1,7 @@
 package com.accuweather.glacier.www.universalfooterpage;
 
-import org.junit.Assert;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.accuweather.glacier.www.AccuWeatherBaseTest;
 import com.accuweather.glacier.www.pages.UniversalFooterPage;
@@ -128,7 +129,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			testStart("Navigating to  test application and validating whether Company Footer has Superior Accuracy in Action link Displayed");	
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(SUPERIOR_ACCURACY_ACTION));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(SUPERIOR_ACCURACY_ACTION));	
 	  }
 	
 	  @Test(priority=7,enabled=true)
@@ -136,7 +137,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			testStart("Navigating to  test application and validating whether Company Footer has About AccuWeather link Displayed");	
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(ABOUT_ACCUWEATHER));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(ABOUT_ACCUWEATHER));	
 	  }	  
 	  
 	  @Test(priority=8,enabled=true)
@@ -144,7 +145,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			testStart("Navigating to  test application and validating whether Company Footer has Media kit link Displayed");	
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(MEDIA_KIT));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(MEDIA_KIT));	
 	  }
 	  	  
 	  @Test(priority=9,enabled=true)
@@ -152,7 +153,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			testStart("Navigating to  test application and validating whether Company Footer has Carrers link Displayed");	
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(CARRERS));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(CARRERS));	
 	  }
 	  
 	  @Test(priority=10,enabled=true)
@@ -161,7 +162,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
 			WebPageLoaded.isDomInteractive();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(PRESS));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(PRESS));	
 	  }
 	  
 	  @Test(priority=11,enabled=true)
@@ -169,7 +170,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			testStart("Navigating to  test application and validating whether Company Footer has Coupons link Displayed");	
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(COUPONS));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(COUPONS));	
 	  }
 	  
 	  @Test(priority=12,enabled=true)
@@ -177,7 +178,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 			testStart("Navigating to  test application and validating whether Company Footer has Contact Us link Displayed");	
 			WebPageLoaded.isDomInteractive();
 			footerpage.scrolldownpage();
-			Assert.assertTrue(footerpage.CompanyFooterContainsLink(CONTACT_US));	
+			Assert.assertTrue(footerpage.companyFooterContainsLink(CONTACT_US));	
 	  }  
 	  
 	 @Test(priority=13,enabled=true)
@@ -259,7 +260,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has Enterprise Solutions link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(ENTERPRISE_SOLUTIONS));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(ENTERPRISE_SOLUTIONS));	
   }
 	
 	@Test(priority=21,enabled=true)
@@ -267,7 +268,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has D3 Data Driven Decisions link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(D3_DATA_DRIVEN_DECISION));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(D3_DATA_DRIVEN_DECISION));	
   }
 	
 	@Test(priority=22,enabled=true)
@@ -275,7 +276,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has AccuWeather Network link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(ACCUWEATHER_NETWORK));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(ACCUWEATHER_NETWORK));	
   }
 	
 	@Test(priority=23,enabled=true)
@@ -283,21 +284,21 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has Story Teller link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(STORY_TELLER));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(STORY_TELLER));	
   }
 	@Test(priority=24,enabled=true)
 	public void TC14_validatingProductandServiceshasToolsforBroadcastDisplayed() {
 		testStart("Navigating to  test application and validating whether Company Footer has Tools for Broadcast link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(TOOLS_BROADCAST));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(TOOLS_BROADCAST));	
   }
 	@Test(priority=25,enabled=true)
 	    public void TC14_validatingProductandServiceshasRadioandNewspaperDisplayed(){
 		testStart("Navigating to  test application and validating whether Company Footer has Radio and Newspaper link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(RADIO_AND_NEWSPAPER));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(RADIO_AND_NEWSPAPER));	
   }
 	
 	@Test(priority=26,enabled=true)
@@ -305,14 +306,14 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has AccuWeather APIs link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(ACCUWEATHER_APIS));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(ACCUWEATHER_APIS));	
   }
 	
 	@Test(priority=27,enabled=true)
 	    public void TC14_validatingProductandServiceshasAccuWeatherStatusDisplayed()  {
 		testStart("Navigating to  test application and validating whether Company Footer has AccuWeather Status link Displayed");	
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(ACCUWEATHER_STATUS));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(ACCUWEATHER_STATUS));	
   }
 	
 	@Test(priority=28,enabled=true)
@@ -320,7 +321,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has Podcast link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.ProductandServicesContainsLink(PODCAST));	
+		Assert.assertTrue(footerpage.productandServicesContainsLink(PODCAST));	
   }
 	
 	
@@ -420,7 +421,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Apps & Download Footer has iPhoneApp link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.AppsandDownloadContainsLink(IPHONEAPP));	
+		Assert.assertTrue(footerpage.appsandDownloadContainsLink(IPHONEAPP));	
   }
 	
 	@Test(priority=39,enabled=true)
@@ -428,7 +429,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Apps & Download Footer has Android App link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.AppsandDownloadContainsLink(ANDROIDAPP));	
+		Assert.assertTrue(footerpage.appsandDownloadContainsLink(ANDROIDAPP));	
   }
 	
 	@Test(priority=40,enabled=true)
@@ -436,7 +437,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Apps & Download Footer has Windows App link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.AppsandDownloadContainsLink(WINDOWSAPP));	
+		Assert.assertTrue(footerpage.appsandDownloadContainsLink(WINDOWSAPP));	
   }
 
 	@Test(priority=41,enabled=true)
@@ -444,7 +445,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Apps & Download Footer has See all Apps & Downloadslink Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.AppsandDownloadContainsLink(APPS_AND_DOWNLOAD));	
+		Assert.assertTrue(footerpage.appsandDownloadContainsLink(APPS_AND_DOWNLOAD));	
   }
 	
 	@Test(priority=42,enabled=true)
@@ -493,7 +494,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has AccuWeather Premium  link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.SubscriptionServicesContainsLink(ACCUWEATHER_PREMIUM));	
+		Assert.assertTrue(footerpage.subscriptionServicesContainsLink(ACCUWEATHER_PREMIUM));	
   }
 	
 	@Test(priority=47,enabled=true)
@@ -501,7 +502,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Company Footer has AccuWeather Professional  link Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.SubscriptionServicesContainsLink(ACCUWEATHER_PROFESSIONAL));	
+		Assert.assertTrue(footerpage.subscriptionServicesContainsLink(ACCUWEATHER_PROFESSIONAL));	
   }
 		
 	@Test(priority=48,enabled=true)
@@ -529,21 +530,21 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Socail media links has Download icon Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.SocailmedialinkContains(ICON_DOWNLOAD));	
+		Assert.assertTrue(footerpage.socailmedialinkContains(ICON_DOWNLOAD));	
   }
 	@Test(priority=51,enabled=true)
 	public void TC32_validatingSocailmedialinkshasFacebookiconDisplayed()  {
 		testStart("Navigating to  test application and validating whether Socail media links has facebook icon Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.SocailmedialinkContains(ICON_FACEBOOK));	
+		Assert.assertTrue(footerpage.socailmedialinkContains(ICON_FACEBOOK));	
   }
 	@Test(priority=52,enabled=true)
 		public void TC32_validatingSocailmedialinkshasTwittericonDisplayed() {
 		testStart("Navigating to  test application and validating whether Socail media links has twitter icon Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.SocailmedialinkContains(ICON_TWITTER));	
+		Assert.assertTrue(footerpage.socailmedialinkContains(ICON_TWITTER));	
   }
 	
 	@Test(priority=53,enabled=true)
@@ -551,7 +552,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		testStart("Navigating to  test application and validating whether Socail media links has TV icon Displayed");	
 		WebPageLoaded.isDomInteractive();
 		footerpage.scrolldownpage();
-		Assert.assertTrue(footerpage.SocailmedialinkContains(ICON_TV));	
+		Assert.assertTrue(footerpage.socailmedialinkContains(ICON_TV));	
   }
 
 	@Test(priority=54,enabled=true)
@@ -602,7 +603,7 @@ public class Test_UniversalFooterpage extends AccuWeatherBaseTest {
 		footerpage.changeLanguagefromSettingsicon();
 		footerpage.scrolldownpage();
 		WebPageLoaded.isDomInteractive();		
-		Assert.assertTrue(footerpage.footerbreadcrumpsDisplayed());
+		Assert.assertTrue(footerpage.footerbreadcrumbsDisplayed());
 	
 		
 	}

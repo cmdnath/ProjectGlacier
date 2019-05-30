@@ -75,12 +75,13 @@ public class UniversalFooterPage extends BasePage {
 	private By bySettingicon = By.xpath("//div[@class='settings-button']");
 	private By byenglishLanguage = By.xpath("//div[3]/div/div/div[2]/div/div");
 	private By byFrench = By.xpath("//div[4]");
-	private By byfooterBreadCrumps = By.cssSelector("body > div.template-root > div.breadcrumbs-wrapper");
+	private By byfooterBreadCrumbs = By.cssSelector("body > div.template-root > div.breadcrumbs-wrapper");
 
-	/*
+	/**
 	 * @ author Sandhya Rani
 	 * Method to verify footer is displayed for English Language
-	 */
+	 * @return - Boolean value - "true  If Footer content is Displayed "
+	 **/
 
 	public boolean footerisDisplayed() {
 		WebPageLoaded.isDomInteractive(3000);
@@ -88,11 +89,11 @@ public class UniversalFooterPage extends BasePage {
 
 	}
 
-	/*
+	/**
 	 * @author Sandhya Rani 
-	 * Method to scroll down the page till the bottom of page by getting x and y
-	 * co-ordinates
-	 */
+	 * Method to scroll down the page till the bottom of page by getting x and y co-ordinates
+	 * 
+	 **/
 
 	public void scrolldownpage() {
 		WebPageLoaded.isDomInteractive();
@@ -100,10 +101,11 @@ public class UniversalFooterPage extends BasePage {
 
 	}
 
-	/*
+	/**
 	 * @author Sandhya Rani 
 	 * Method to switch the control to new tab and extracting landing page URL
-	 */
+	 * @return - String value - "URL of the Landing page"
+	 **/
 
 	public String getlandingurltitle() {
 		List<String> browserTabs = new ArrayList<String>(getDriver().getWindowHandles());
@@ -113,11 +115,12 @@ public class UniversalFooterPage extends BasePage {
 		return getDriver().switchTo().window(browserTabs.get(1)).getCurrentUrl();
 
 	}
-	/*
-	 *@author Sandhya Rani 
+	/**
 	 * Method to verify footer displayed with following Headers
 	 * "Company","Products & Services" "Apps & Download" and "Subscription Services"
-	 */
+	 * @author Sandhya Rani 
+	 * @return- Boolean value - "true  If footer Displayed with the following headers"
+	 **/
 
 	public boolean isbaseFooterContainsLink(String link) {
 
@@ -143,12 +146,13 @@ public class UniversalFooterPage extends BasePage {
 
 	}
 
-	/*
-	 *
+	/**
 	 * Method to verify footer all the links present under the Header "Company"
-	 */
+	 * @author Sandhya Rani
+	 * @return- Boolean value - "true  If company header Displayed with the following links"
+	 **/
 
-	public boolean CompanyFooterContainsLink(String link) {
+	public boolean companyFooterContainsLink(String link) {
 		if (link.equalsIgnoreCase("Superior Accuracy in Action")) {
 			WebPageLoaded.isDomInteractive(3000);
 			return getDriver().findElement(bySuperiorAccuracyinAction).isDisplayed();
@@ -181,12 +185,13 @@ public class UniversalFooterPage extends BasePage {
 		return false;
 	}
 
-	/*
-	 *
+	/**
 	 * Method to verify footer links present under the Header "Products & Services"
-	 */
+	 * @author Sandhya Rani
+	 * @return- Boolean value - "true  If  product and Services header Displayed with the following links"
+	 **/
 
-	public boolean ProductandServicesContainsLink(String link) {
+	public boolean productandServicesContainsLink(String link) {
 		if (link.equalsIgnoreCase("Enterprise Solutions")) {
 			WebPageLoaded.isDomInteractive(3000);
 			return getDriver().findElement(byEnterpriseSolutions).isDisplayed();
@@ -231,12 +236,13 @@ public class UniversalFooterPage extends BasePage {
 		return false;
 	}
 
-	/*
-	 *
+	/**
 	 * Method to verify footer links present under the "Apps & Download"
+	 * @author Sandhya Rani 
+	 * @return- Boolean value - "true  If  Apps and Download header Displayed with the following links"
 	 */
 
-	public boolean AppsandDownloadContainsLink(String link) {
+	public boolean appsandDownloadContainsLink(String link) {
 		if (link.equalsIgnoreCase("iPhone App")) {
 			WebPageLoaded.isDomInteractive(3000);
 			return getDriver().findElement(byiPhoneApp).isDisplayed();
@@ -259,12 +265,13 @@ public class UniversalFooterPage extends BasePage {
 
 	}
 
-	/*
-	 *
+	/**
 	 * Method to verify footer links present under Subscription Services
-	 */
+	 * @author Sandhya Rani 
+	 * @return- Boolean value - "true  If  Subscription Services header Displayed with the following links"
+	 **/
 
-	public boolean SubscriptionServicesContainsLink(String link) {
+	public boolean subscriptionServicesContainsLink(String link) {
 		if (link.equalsIgnoreCase("AccuWeather Premium")) {
 			WebPageLoaded.isDomInteractive(3000);
 			return getDriver().findElement(byAccuWeatherPremium).isDisplayed();
@@ -277,12 +284,13 @@ public class UniversalFooterPage extends BasePage {
 		return false;
 	}
 
-	/*
-	 *
+	/**
 	 * Method to verify all footer links present for Social media Links
-	 */
+	 * @author Sandhya Rani
+	 * @return- Boolean value - "true  If  Subscription Services header Displayed with the following links"
+	 **/
 
-	public boolean SocailmedialinkContains(String link) {
+	public boolean socailmedialinkContains(String link) {
 		if (link.equalsIgnoreCase("Social icon download")) {
 			WebPageLoaded.isDomInteractive(3000);
 			return getDriver().findElement(bysocialicondownload).isDisplayed();
@@ -305,11 +313,11 @@ public class UniversalFooterPage extends BasePage {
 		return false;
 	}
 
-	/*
-	 *
-	 * Method to click on the links available from the footers
-	 */
-
+	/**
+	 *  Method to click on the links available from the footers
+	 * @author Sandhya Rani
+	 * @return- Boolean value - "true if clicked on links from the footer"
+	 **/
 	public void isclickedonfooterlink(String link) {
 		if (link.equalsIgnoreCase("Superior Accuracy in Action")) {
 			WebPageLoaded.isDomInteractive();
@@ -505,6 +513,13 @@ public class UniversalFooterPage extends BasePage {
 
 	}
 
+	
+	/**
+	 * Method to change the language other than English from Settings icon
+	 * @author Sandhya Rani
+	 * 
+	 **/
+
 	public void changeLanguagefromSettingsicon() {
 		WebPageLoaded.isDomInteractive();
 
@@ -519,10 +534,16 @@ public class UniversalFooterPage extends BasePage {
 		WebPageLoaded.isDomComplete(8000);
 	}
 
-	public boolean footerbreadcrumpsDisplayed() {
+	
+	/**
+	 * Method to verify footer bread crumbs are displayed when changed the Language other than English.
+	 * @author Sandhya Rani
+	 * 
+	 **/
+	public boolean footerbreadcrumbsDisplayed() {
 		WebPageLoaded.isDomInteractive(3000);
 
-		return getDriver().findWebElement(byfooterBreadCrumps).isDisplayed();
+		return getDriver().findWebElement(byfooterBreadCrumbs).isDisplayed();
 
 	}
 
