@@ -14,7 +14,7 @@ public class BaseAPI {
     //private final static String QA_URL = "http://qa-accuweather-api-northcentral-us.cloudapp.net/";
     //private final static String QA_URL = "http://api.accuweather.com/";
 	//private final static String PROD_URL = "http://api.accuweather.com/";
-	 private final static String QA_URL = "https://glacier-dev1.accuweather.com/";
+	 private final static String QA_URL = "http://ncus-gadc-api-production.trafficmanager.net/";
     private final static String PROD_URL = "https://glacier-dev1.accuweather.com/";
     
     private final static String KEY = "16803";

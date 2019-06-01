@@ -70,7 +70,7 @@ public class AccuWeatherBaseTest extends WebBaseTest {
     
     @SuppressWarnings("deprecation")
 	public void waitUntilElementIsDisplayedOrClickable() {
-    	WebDriverWait wait = new WebDriverWait(getDriver(),100);
+    	WebDriverWait wait = new WebDriverWait(getDriver(),500);
 		  wait.pollingEvery(5,TimeUnit.SECONDS);
     }
     

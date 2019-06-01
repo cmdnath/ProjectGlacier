@@ -1,8 +1,9 @@
 package com.accuweather.glacier.www;
 
 public class WebRoutes {
-    public static final String MAIN = "https://www.accuweather.com/";
-    private static final String ROOT = "https://www.accuweather.com";
+    //public static final String MAIN = "https://www.accuweather.com/";
+    public static final String MAIN = "https://development.accuweather.com/";
+    private static final String ROOT = "https://development.accuweather.com/";
     public static final String PLACEHOLDER = "/%s";
 
     public static final String WEATHER_RADAR = ROOT + PLACEHOLDER + PLACEHOLDER + PLACEHOLDER + "/weather-radar";

@@ -44,8 +44,9 @@ public class Test_PodcastPage extends AccuWeatherBaseTest {
 	  navBar.mouseHoverOnMoreMenu(); navBar.mouseHoverOnPodcastSubMenu();
 	  waitUntilElementIsDisplayedOrClickable(); navBar.clickOnPodcastSubMenu();
 	  waitUntilWindowExistsWithTitle(PodcastTitle);
-	  waitUntilElementIsDisplayedOrClickable(); podpage.clickOnAWLogo();
-	  Assert.assertTrue(navBar.isAWLogoDisplayed());	   
+	  waitUntilElementIsDisplayedOrClickable();
+	  podpage.clickOnAWLogo();
+	  //Assert.assertTrue(navBar.isAWLogoDisplayed());	   
 	  ActualHomePageTitle = getDriver().getTitle();
 	  Assert.assertEquals(ActualHomePageTitle, ExpectedHomePageTitle);
 	  }
