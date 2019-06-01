@@ -14,11 +14,11 @@ public class NewsWeatherPage extends BasePage {
 	private By byBroadcastersTab = By.xpath("/html/body/div[1]/div[1]/div/div[2]/div/div/div[1]/ul/li[2]/a[contains(@title,'Broadcasters')]");
 	private By byClimateChangesection = By.cssSelector("div.page-column-1 > div");
 	
-	public void isNewsTabeEnabled() {
+	public boolean isNewsTabEnabled() {
 		WebPageLoaded.isDomInteractive();
         WebElement NewsTab = getDriver().findElement(byNewsTab);
         NewsTab.syncVisible(15);
-        NewsTab.isEnabled();
+        return NewsTab.isEnabled();
 	}
 	
 	public void isBroadCasterTabeEnabled() {
@@ -28,11 +28,11 @@ public class NewsWeatherPage extends BasePage {
         BroadcastTab.isEnabled();
 	}
 	
-	public void isWeatherBlogTabeEnabled() {
+	public boolean isWeatherBlogTabeEnabled() {
 		WebPageLoaded.isDomInteractive();
         WebElement WeatherBlogTab = getDriver().findElement(byWeatherBlogTab);
         WeatherBlogTab.syncVisible(15);
-        WeatherBlogTab.isDisplayed();
+        return WeatherBlogTab.isDisplayed();
 	}
 	
 	public void isClimateChangeSectionEnabled() {
