@@ -63,7 +63,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 
 	public void TC1_CityForecastPageTodayCardIsDisplayed() throws InterruptedException {
 
@@ -83,7 +83,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 
 	public void TC1_CityForecastPageTonightCardIsDisplayed() throws InterruptedException {
 
@@ -123,7 +123,7 @@ public class Test_CurrentCondition extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 
 	public void TC1_CityForecastPageCurrentWeatherURL() throws InterruptedException {
 

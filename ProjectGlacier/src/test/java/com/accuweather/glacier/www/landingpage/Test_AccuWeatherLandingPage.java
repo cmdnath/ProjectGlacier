@@ -52,7 +52,7 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 
 	
 
-	  @Test(priority=1) public void TC1_VerifyRecentFirstLocationIsDisplayed() {
+	  @Test(priority=1, enabled=true) public void TC1_VerifyRecentFirstLocationIsDisplayed() {
 
 	  testStart("Is First Location Displayed Under Recent Location Section");
 
@@ -66,7 +66,7 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 
 	  
 
-	  @Test(priority=2) public void
+	  /*@Test(priority=2, enabled=true) public void
 
 	  TC1_VerifyDefaultLocationNameAndAkamaiNameAreNotSame() {
 
@@ -90,11 +90,11 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 
 	  landingpage.getCrumbLocationName(); Assert.assertNotSame(actualLocationName,
 
-	  crumbLocationName); }
+	  crumbLocationName); }*/
 
 	  
 
-	  @Test(priority=4) public void TC2_VerifyRecentTwoLocationsAreDisplayed() {
+	  @Test(priority=4, enabled=true) public void TC2_VerifyRecentTwoLocationsAreDisplayed() {
 
 	  testStart("Are Two recent locations Displayed Under Recent Location Section"
 
@@ -120,7 +120,7 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 
 	  
 
-	  @Test(priority=5) public void TC3_VerifyRecentThreeLocationsAreDisplayed() {
+	  @Test(priority=5, enabled=true) public void TC3_VerifyRecentThreeLocationsAreDisplayed() {
 
 	  testStart("Are Three recent locations Displayed Under Recent Location Section"
 
@@ -157,7 +157,7 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 	  
 
 	  
-
+/*
 	  @Test(priority=6) public void TC2_VerifyCTATitleAreSame() {
 
 	  testStart("Verify CTA Title"); actualCTATitle =
@@ -172,7 +172,7 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 
 	
 
-	 @Test(priority=7) public void TC9_IsVideoAutoPlayedOnHomePage() throws
+	 @Test(priority=7, enabled=true) public void TC9_IsVideoAutoPlayedOnHomePage() throws
 
 	 InterruptedException {
 
@@ -246,7 +246,7 @@ public class Test_AccuWeatherLandingPage extends AccuWeatherBaseTest {
 
 	  getDriver().getTitle(); Assert.assertEquals(actualWeatherRadarTitle,
 
-	  expectedWeatherRadarTitle); }
+	  expectedWeatherRadarTitle); }*/
 
 	 
 

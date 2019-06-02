@@ -43,7 +43,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 
 
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 
 	public void TC1_nowTabOnCityForecastPage() {
 
@@ -984,7 +984,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 
 		Assert.assertTrue(threeDayForecastPage.fourWeathercardisDisplayed());
 
-	}
+	}*/
 	
 	@Test(priority = 45, enabled = true)
 	public void TC12_isTimeCorrectOnCurrentWeather()
@@ -1006,7 +1006,7 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		Assert.assertTrue(threeDayForecastPage.dateValidationOnTodayCard());
 	}
 	
-	@Test(priority = 47, enabled = true)
+	/*@Test(priority = 47, enabled = true)
 	public void TC12_isDateCorrectOnTonightCard()
 	{
 		testStart("Verification whether current date is displayed on tonight card");
@@ -1024,5 +1024,5 @@ public class Test_ThreeDayForecast extends AccuWeatherBaseTest {
 		landingpage.clickOnZipcodeSearchIcon();
 		waitUntilWindowExistsWithTitle(expectedForecastPageTitle);
 		Assert.assertTrue(threeDayForecastPage.dateValidationOnTomorrowsCard());
-	}
+	}*/
 }

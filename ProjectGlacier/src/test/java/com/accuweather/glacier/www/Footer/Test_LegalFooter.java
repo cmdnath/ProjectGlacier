@@ -39,7 +39,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 	private LandingPage landingPage = new LandingPage();
 	private LegalFooter legalFooter = new LegalFooter();
 
-	@Test(priority=1)
+	/*@Test(priority=1, enabled=true)
 	public void TC1_verifyPresenceOfTermsOfUseInFooter()
 	{
 		testStart("Validate whether Terms of Use link is present in footer");
@@ -59,9 +59,9 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(EXPECTED_LANDING_PAGE_TITLE);
 		Assert.assertEquals(legalFooter.getTermsOfUseText(),TERMS_OF_USE);
-	}
+	}*/
 	
-	@Test(priority=3)
+	@Test(priority=3, enabled=true)
 	public void TC2_verifyTitleOfTermsOfUse()
 	{
 		testStart("Validate the title of Terms Of use page");
@@ -72,7 +72,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getTitleOfTermsOfUse(),TERMS_OF_USE_TITLE);
 	}
 	
-	@Test(priority=4)
+	@Test(priority=4, enabled=true)
 	public void TC2_verifyURLOfTermsOfUse()
 	{
 		testStart("Validate whether the URL of Terms Of use page is correct");
@@ -83,7 +83,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getURLOfTermsOfUse(),TERMS_OF_USE_URL);
 	}
 	
-	@Test(priority=5)
+	/*@Test(priority=5)
 	public void TC2_verifyTermsOfUseTab()
 	{
 		testStart("Validate the name of Terms Of use tab");
@@ -138,7 +138,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getPrivacyPolicyText(),PRIVACY_POLICY);
 	}
 	
-	@Test(priority=10)
+	@Test(priority=10, enabled=true)
 	public void TC4_verifyTitleOfPrivacyPolicy()
 	{
 		testStart("Validate the title of Terms Of use page");
@@ -248,7 +248,7 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		Assert.assertEquals(legalFooter.getNameOfCookiePolicyTab(),COOKIE_POLICY.toUpperCase());
 	}
 	
-	@Test(priority=20)
+	@Test(priority=20, enabled=true)
 	public void TC6_verifyBorderColorOfCookiePolicyTab()
 	{
 		testStart("Validate whether the color of Cookie Policy tab is Orange");
@@ -403,6 +403,6 @@ public class Test_LegalFooter extends AccuWeatherBaseTest{
 		waitUntilElementIsDisplayedOrClickable();
 		waitUntilWindowExistsWithTitle(EXPECTED_LANDING_PAGE_TITLE);
 		Assert.assertTrue(legalFooter.legalFooterStatusWhenLangChanged());
-	}
+	}*/
 
 }

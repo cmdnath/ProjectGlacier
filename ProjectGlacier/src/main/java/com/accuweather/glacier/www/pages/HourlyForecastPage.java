@@ -288,7 +288,7 @@ public class HourlyForecastPage extends BasePage
 
 		WebElement time = getDriver().findElement(byTime);
 
-		time.syncVisible(15);
+		time.syncVisible(20);
 
 		return time.getText();
 
@@ -790,7 +790,7 @@ public class HourlyForecastPage extends BasePage
 	public void clickCurrentHourTab()
 	{
 		WebPageLoaded.isDomInteractive();
-		WebElement currentHourInfoTab = getDriver().findElement(byCurrentHourInfoTab);
+		WebElement currentHourInfoTab = getDriver().findElement(byCurrentHourTab);
 		currentHourInfoTab.syncVisible(30);
 		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		getDriver().findElement(byCurrentHourTab).jsClick();
@@ -1417,7 +1417,7 @@ public class HourlyForecastPage extends BasePage
 
 				if (i == 1)
 				{
-					if (counter < 12)
+					if (currentHour < 12)
 					{
 						if (getTimeForAllTabs(i).equals(counter + " AM"))
 						{
@@ -1432,7 +1432,7 @@ public class HourlyForecastPage extends BasePage
 					}
 					else
 					{
-						if (counter == 12)
+						if (currentHour == 12)
 						{
 							if (getTimeForAllTabs(i).equals(counter + " PM"))
 							{
@@ -1446,7 +1446,7 @@ public class HourlyForecastPage extends BasePage
 						}
 						else
 						{
-							if (getTimeForAllTabs(i).equals(counter - 12 + " PM"))
+							if (getTimeForAllTabs(i).equals(counter+ " PM"))
 							{
 								setTimeValidation(true);
 								counter++;
@@ -1461,7 +1461,7 @@ public class HourlyForecastPage extends BasePage
 				}
 				else
 				{
-					if (counter < 12)
+					if (currentHour < 12)
 					{
 						if (getTimeForAllTabs(i).equals(counter + " AM"))
 						{
@@ -1475,9 +1475,9 @@ public class HourlyForecastPage extends BasePage
 					}
 					else
 					{
-						if (counter == 12)
+						if (currentHour == 12)
 						{
-							if (getTimeForAllTabs(i).equals(12 + " PM"))
+							if (getTimeForAllTabs(i).equals(counter + " PM"))
 							{
 								setTimeValidation(true);
 								counter++;
@@ -1489,7 +1489,7 @@ public class HourlyForecastPage extends BasePage
 						}
 						else
 						{
-							if (getTimeForAllTabs(i).equals(counter - 12 + " PM"))
+							if (getTimeForAllTabs(i).equals(counter + " PM"))
 							{
 								setTimeValidation(true);
 								counter++;
