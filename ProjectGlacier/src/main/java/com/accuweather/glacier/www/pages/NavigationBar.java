@@ -3,29 +3,42 @@ package com.accuweather.glacier.www.pages;
 
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 import com.accuweather.glacier.BasePage;
+
+import com.chameleon.selenium.elements.Link;
+
+import com.chameleon.selenium.elements.Table;
+
 import com.chameleon.selenium.web.WebPageLoaded;
+
 import com.chameleon.selenium.web.elements.WebElement;
+
+import com.chameleon.selenium.web.elements.WebLink;
+
 import com.chameleon.selenium.web.elements.WebTextbox;
+
 import com.chameleon.utils.Constants;
 
 
 
 public class NavigationBar extends BasePage {
 
-    //private By byLogo = By.cssSelector("div > div.main-menu > div.logo-wrapper > a > svg");
-
-    private By byLogo = By.cssSelector("div.template-root > div.component-sticky-container.header > div > div.main-menu > div.logo-wrapper > div > a");
-
-
+    private By byLogo = By.cssSelector("div > div.main-menu > div.logo-wrapper > a > svg");
 
     //private By byRadarMaps = By.id("navRadar");
 
     //private By byRadarMaps = By.xpath("//li[contains(@id,'navRadar')]/a/span");
+
+    private By byMegaMenu = By.cssSelector("div.main-menu-content");
 
     private By byRadarMaps = By.cssSelector("div.main-menu > ul > li:nth-child(1)");
 
@@ -38,6 +51,14 @@ public class NavigationBar extends BasePage {
     private By byMore = By.cssSelector("div.main-menu > ul > li:nth-child(5)");
 
     private By byStartSearch = By.className("search-input");
+
+    //private By byTopSearch = By.cssSelector("div.main-menu > div.header-right-container > div.search-wrapper.is-wide > svg.icon-search");
+
+    private By byTopSearch = By.xpath("//div[contains(@class,'header-right-container')]/div");
+
+    //private By byTopSearchClose = By.xpath("//div[contains(@class,'header-right-container')]/svg");
+
+    private By byTopSearchClose = By.cssSelector("div.header-right-container > svg.icon-close");
 
     private By bySuperSearch = By.className("super-search-input");
 
@@ -54,6 +75,8 @@ public class NavigationBar extends BasePage {
     private By byForecastMapsSubMenu = By.cssSelector("div.mega-menu > div > div:nth-child(5) > a > h4");
 
     private By byMainMenuDescriptionLink = By.cssSelector("a > figure > figcaption");
+
+    private By byWatchNewsSubMenu = By.cssSelector("div.mega-menu-item.mega-menu-item-cta.fade-in-left > a:nth-child(3)");
 
     private By byWeatherNewsSubMenu = By.cssSelector("div > div:nth-child(2) > a > h4");
 
@@ -73,17 +96,33 @@ public class NavigationBar extends BasePage {
 
     private By bySeverWeatherSubMenu = By.cssSelector("div.mega-menu > div > div.mega-menu-item.mega-menu-item-cta.fade-in-left > a > h4");
 
-    private By byVideoSubMenu = By.cssSelector("div.menu-dropdown > div > div:nth-child(1) > div > a:nth-child(1) > h3");
+    //private By byVideoSubMenu = By.cssSelector("div.menu-dropdown > div > div:nth-child(1) > div > a:nth-child(1) > h3");
 
-    private By byWatchVideoButton = By.cssSelector("div.menu-dropdown > div > div:nth-child(1) > div > a.orange-button.videos");
+    private By byVideoSubMenu = By.cssSelector("div.mega-menu > div > div:nth-child(1) > a:nth-child(1) > h4");
+
+    private By byVideoDescription = By.cssSelector("div.mega-menu > div:nth-child(1) > div:first-child");
+
+    private By byWatchVideoButton = By.cssSelector("div.mega-menu > div > div:nth-child(1) > a:nth-child(3)");
+
+   // private By byWatchVideoButton = By.cssSelector("div > a:nth-child(3)");
+
+    //private By byWatchVideoButton = By.cssSelector("div.menu-dropdown > div > div:nth-child(1) > div > a.orange-button.videos");
 
     //private By byTrendingNow = By.cssSelector("div.menu-dropdown > div > div:nth-child(2) > div:nth-child(1) > h4 > a");
 
     private By byTrendingNow = By.cssSelector("div > div:nth-child(2) > a > h4");
 
-    private By byExpertForecasts = By.cssSelector(" div.mega-menu > div > div:nth-child(4) > a > h4");
+    private By byTrendingNowDescription = By.cssSelector("div.mega-menu > div > div:nth-child(2)");
+
+    private By byExpertForecasts = By.cssSelector(" div.mega-menu > div > div:nth-child(3) > a > h4");
 
     private By byStormChasers = By.cssSelector(" div.mega-menu > div > div:nth-child(4) > a > h4");
+
+    private By byStormChasersDescription = By.cssSelector("div.mega-menu > div > div:nth-child(4)");
+
+    private By byExpertForecastDescription = By.cssSelector("div.mega-menu > div > div:nth-child(3)");
+
+
 
     //private By byTrendingNow = By.xpath("//body[contains(@id,'home')]//div[5]/div/div[2]/div[1]/h4/a[contains(.,'Trending Now')]");
 
@@ -119,7 +158,27 @@ public class NavigationBar extends BasePage {
 
     private By byCouponsText = By.cssSelector("div > div.mega-menu > div > div:nth-child(6) > p");
 
-    
+    private By byFacebookIcon = By.cssSelector("div > div.mega-menu > div > div:nth-child(7) > a > h4");
+
+    private By byTwitterIcon = By.cssSelector("div.mega-menu-content > div.header-social.fade-in-left > a > svg.icon-twitter");
+
+    private By byYoutubeIcon = By.cssSelector("div.mega-menu-content > div.header-social.fade-in-left > a > svg.icon-youtube");
+
+    private By byInstagramIcon = By.cssSelector("div.mega-menu-content > div.header-social.fade-in-left > a >img.icon-instagram");
+
+    private By byFaceBookText = By.xpath("//div[contains(@class,'social')]/a[1]/h4");
+
+    private By byTwitterText = By.xpath("//div[contains(@class,'social')]/a[2]/h4");
+
+    private By byInstagramText = By.xpath("//div[contains(@class,'social')]/a[3]/h4");
+
+    private By byyoutubeText = By.xpath("//div[contains(@class,'social')]/a[4]/h4");
+
+
+
+
+
+
 
     
 
@@ -242,6 +301,64 @@ public class NavigationBar extends BasePage {
         txtSuperSearch.sendKeys(Keys.RETURN);
 
     }
+
+    
+
+    public boolean isStartSearchDisplayed() {
+
+   	WebPageLoaded.isDomInteractive();
+
+    WebTextbox txtSearch = getDriver().findTextbox(byTopSearch);
+
+    txtSearch.syncVisible(15);
+
+	return txtSearch.isDisplayed();     
+
+   }
+
+    
+
+    
+
+    public boolean isMegaMenuContentDisplayed() {
+
+       	WebPageLoaded.isDomInteractive();
+
+        WebElement megamenucontent = getDriver().findElement(byMegaMenu);
+
+        megamenucontent.syncVisible(15);
+
+    	return megamenucontent.isDisplayed();     
+
+       }
+
+    
+
+    public boolean isTopNavSearchCloseIconDisplayed() {
+
+       	WebPageLoaded.isDomInteractive();
+
+        WebTextbox closesearch = getDriver().findTextbox(byTopSearchClose);
+
+        closesearch.syncVisible(15);
+
+    	return closesearch.isDisplayed();     
+
+       }
+
+    
+
+    public void clickTopNavSearchCloseIcon() {
+
+       	WebPageLoaded.isDomInteractive();
+
+        WebTextbox closesearch = getDriver().findTextbox(byTopSearchClose);
+
+        closesearch.syncVisible(15);
+
+    	closesearch.click();     
+
+       }
 
     
 
@@ -457,6 +574,20 @@ public class NavigationBar extends BasePage {
 
         
 
+        public boolean isWatchNewsSubMenuDisplayed() {
+
+        	WebPageLoaded.isDomInteractive();
+
+            WebElement watchnews = getDriver().findElement(byWatchNewsSubMenu);
+
+            watchnews.syncVisible(15);
+
+            return watchnews.isDisplayed();    	   	
+
+        }
+
+        
+
         public boolean isWeatherNewsSubMenuDisplayed() {
 
         	WebPageLoaded.isDomInteractive();
@@ -513,9 +644,21 @@ public class NavigationBar extends BasePage {
 
         
 
+        
+
         public void navigateToNewsPage() {
 
             getDriver().findElement(byWeatherNewsSubMenu).click();
+
+            //clickVisibleElement(byRadarSubMenu);
+
+            }
+
+        
+
+        public void navigateToWeatherVidoesPage() {
+
+            getDriver().findElement(byWatchNewsSubMenu).click();
 
             //clickVisibleElement(byRadarSubMenu);
 
@@ -657,7 +800,7 @@ public class NavigationBar extends BasePage {
 
         public void navigateToSevereTab() {
 
-            getDriver().findElement(bySeverWeatherSubMenu).click();
+            getDriver().findElement(bySevereSubMenu).click();
 
             //clickVisibleElement(byRadarSubMenu);
 
@@ -928,6 +1071,38 @@ public class NavigationBar extends BasePage {
             getDriver().findElement(byVideoDescriptionLink).click();
 
                         }
+
+        
+
+        public void clickSeverWeatherSubMenu() {
+
+        getDriver().findElement(bySeverWeatherSubMenu).click();
+
+        }
+
+        
+
+        public void clickHurricaneSubMenu() {
+
+            getDriver().findElement(byHurricaneSubMenu).click();
+
+            }
+
+        
+
+        public void clickWinterWeatherSubMenu() {
+
+            getDriver().findElement(byWinterWeatherSubMenu).click();
+
+            }
+
+        
+
+        public void clicAwReadySubMenu() {
+
+            getDriver().findElement(byAWReadySubMenu).click();
+
+            }
 
         
 
@@ -1295,6 +1470,124 @@ public class NavigationBar extends BasePage {
 
         
 
+        public boolean isFacebookIconDisplayed() {
+
+        	WebPageLoaded.isDomInteractive();
+
+            WebElement fbicon = getDriver().findElement(byFacebookIcon);
+
+            fbicon.syncVisible(15);
+
+            return fbicon.isDisplayed();       	   	
+
+        }
+
         
+
+        
+
+        public boolean isTwitterIconDisplayed() {
+
+        	WebPageLoaded.isDomInteractive();
+
+            WebElement twittericon = getDriver().findElement(byTwitterIcon);
+
+            twittericon.syncVisible(15);
+
+            return twittericon.isDisplayed();       	   	
+
+        }
+
+        
+
+        public boolean isInstagramIconDisplayed() {
+
+        	WebPageLoaded.isDomInteractive();
+
+            WebElement instagramicon = getDriver().findElement(byInstagramIcon);
+
+            instagramicon.syncVisible(15);
+
+            return instagramicon.isDisplayed();       	   	
+
+        }
+
+        
+
+        public boolean isYoutubeIconDisplayed() {
+
+        	WebPageLoaded.isDomInteractive();
+
+            WebElement youtubeicon = getDriver().findElement(byYoutubeIcon);
+
+            youtubeicon.syncVisible(15);
+
+            return youtubeicon.isDisplayed();       	   	
+
+        }
+
+        
+
+        public void clickOnTwitterIcon() {
+
+            getDriver().findElement(byTwitterIcon).click();                       
+
+        }
+
+        
+
+        /*
+
+         * Method to get Video Sub Menu Description Text from Navigation Bar
+
+         */
+
+        public String getVideoSubMenuDescriptionText() {
+
+            return getDriver().findElement(byVideoDescription).getText().substring(5,71).trim();                       
+
+        }
+
+        
+
+        /*
+
+         * Method to get Trending Now Sub Menu Description Text from Navigation Bar
+
+         */
+
+        public String getTredndingNowSubMenuDescriptionText() {
+
+            return getDriver().findElement(byTrendingNowDescription).getText().substring(13,57).trim();                       
+
+        }
+
+        
+
+        /*
+
+         * Method to get Storm Chasers Sub Menu Description Text from Navigation Bar
+
+         */
+
+        public String getStormChasersSubMenuDescriptionText() {
+
+            return getDriver().findElement(byStormChasersDescription).getText().substring(13,48).trim();                       
+
+        }
+
+        
+
+        /*
+
+         * Method to get Expert Forecast Sub Menu Description Text from Navigation Bar
+
+         */
+
+        public String getExpertForecastSubMenuDescriptionText() {
+
+            return getDriver().findElement(byExpertForecastDescription).getText().substring(15,49).trim();                       
+
+        }
 
 }
