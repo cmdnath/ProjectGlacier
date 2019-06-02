@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -485,6 +486,9 @@ public class WebBaseTest extends BaseTest {
             case INTERNETEXPLORER:
                 options.getInternetExplorerOptions().ignoreZoomSettings();
                 break;
+            case CHROME:
+            	options.getChromeOptions().setCapability(ChromeOptions.CAPABILITY, options.getChromeOptions());
+            	break;
             default:
                 break;
         }

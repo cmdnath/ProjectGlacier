@@ -192,6 +192,27 @@ public class ThreeDayForecastPage extends BasePage {
 			"body > div.template-root > div.two-column-page-content > div.page-column-1 > div.flipper-panel.three-day-panel.three-day-forecast.full-mobile-width > div.next > div:nth-child(2) > svg > path");
 	
 	SimpleDate currentDate = new SimpleDate();
+	private final static String CURRENT_WEATHER = "Current Weather";
+	private final static String CURRENT_WEATHER_TIME_STAMP= "Current Weather Time Stamp";
+	private final static String CURRENT_WEATHER_WEATHER_ICON = "Current Weather Weather Icon";
+	private final static String CURRENT_WEATHER_TEMPERATURE = "Current Weather Temperature";
+	private final static String CURRENT_WEATHER_REALFEEL_TEMP = "Current Weather RealFeelTemperature";
+	private final static String CURRENT_WEATHER_DESCRIPTION = "Current Weather Description";
+	private final static String TODAY = "Today";
+	private final static String CURRENT_DATE = "Current date";
+	private final static String TODAY_WEATHER_ICON = "Today Weather icon";
+	private final static String TODAY_HIGH_TEMP = "Today High Temperature";
+	private final static String TODAY_REALFEEL_TEMP_WITH_TRADEMARK = "Today RealFeelTemperature with trademark";
+	private final static String TODAY_WEATHER_DESCRIPTION = "Today Weather Description";
+	private final static String TONIGHT_CURRENT_DATE = "Tonight Current date";
+	private final static String TONIGHT_WEATHER_ICON = "Tonight Weather icon";
+	private final static String TONIGHT_LOW_TEMP = "Tonight Low Temperature";
+	private final static String TONIGHT_REALFEEL_TEMP_WITH_TRADEMARK = "Tonight RealFeelTemperature with trademark";
+	private final static String TONIGHT_WEATHER_DESCRIPTION = "Tonight Weather Description";
+	private final static String TOMORROW_CURRENT_DATE = "Tomorrow Current date";
+	private final static String TOMORROW_WEATHER_ICON = "Tomorrow Weather icon";
+	private final static String TOMORROW_HIGH_AND_LOW_TEMP = "Tomorrow High and Low Temperature";
+	private final static String TOMORROW_WEATHER_DESCRIPTION = "Tomorrow  Weather Description";
 
 
 
@@ -567,7 +588,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		WebPageLoaded.isDomInteractive();
 
-		if (cardName.equalsIgnoreCase("Current Weather")) {
+		if (cardName.equalsIgnoreCase(CURRENT_WEATHER)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -575,7 +596,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Current Weather Time Stamp")) {
+		if (cardName.equalsIgnoreCase(CURRENT_WEATHER_TIME_STAMP)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -583,7 +604,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Current Weather Weather Icon")) {
+		if (cardName.equalsIgnoreCase(CURRENT_WEATHER_WEATHER_ICON)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -591,7 +612,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Current Weather Temperature")) {
+		if (cardName.equalsIgnoreCase(CURRENT_WEATHER_TEMPERATURE)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -599,7 +620,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Current Weather RealFeelTemperature")) {
+		if (cardName.equalsIgnoreCase(CURRENT_WEATHER_REALFEEL_TEMP)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -607,7 +628,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Current Weather Description")) {
+		if (cardName.equalsIgnoreCase(CURRENT_WEATHER_DESCRIPTION)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -615,7 +636,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Today")) {
+		if (cardName.equalsIgnoreCase(TODAY)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -623,7 +644,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Current date")) {
+		if (cardName.equalsIgnoreCase(CURRENT_DATE)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -631,7 +652,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Today Weather icon")) {
+		if (cardName.equalsIgnoreCase(TODAY_WEATHER_ICON)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -639,7 +660,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Today High Temperature")) {
+		if (cardName.equalsIgnoreCase(TODAY_HIGH_TEMP)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -647,7 +668,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Today RealFeelTemperature with trademark")) {
+		if (cardName.equalsIgnoreCase(TODAY_REALFEEL_TEMP_WITH_TRADEMARK)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -655,7 +676,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Today Weather Description")) {
+		if (cardName.equalsIgnoreCase(TODAY_WEATHER_DESCRIPTION)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -663,7 +684,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tonight Current date")) {
+		if (cardName.equalsIgnoreCase(TONIGHT_CURRENT_DATE)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -671,7 +692,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tonight Weather icon")) {
+		if (cardName.equalsIgnoreCase(TONIGHT_WEATHER_ICON)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -679,7 +700,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tonight Low Temperature")) {
+		if (cardName.equalsIgnoreCase(TONIGHT_LOW_TEMP)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -687,7 +708,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tonight RealFeelTemperature with trademark")) {
+		if (cardName.equalsIgnoreCase(TONIGHT_REALFEEL_TEMP_WITH_TRADEMARK)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -695,7 +716,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tonight Weather Description")) {
+		if (cardName.equalsIgnoreCase(TONIGHT_WEATHER_DESCRIPTION)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -703,7 +724,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tomorrow Current date")) {
+		if (cardName.equalsIgnoreCase(TOMORROW_CURRENT_DATE)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -711,7 +732,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tomorrow Weather icon")) {
+		if (cardName.equalsIgnoreCase(TOMORROW_WEATHER_ICON)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -719,7 +740,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tomorrow High and Low Temperature")) {
+		if (cardName.equalsIgnoreCase(TOMORROW_HIGH_AND_LOW_TEMP)) {
 
 			WebPageLoaded.isDomInteractive();
 
@@ -727,7 +748,7 @@ public class ThreeDayForecastPage extends BasePage {
 
 		}
 
-		if (cardName.equalsIgnoreCase("Tomorrow  Weather Description")) {
+		if (cardName.equalsIgnoreCase(TOMORROW_WEATHER_DESCRIPTION)) {
 
 			WebPageLoaded.isDomInteractive();
 

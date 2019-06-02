@@ -35,16 +35,15 @@ public class DailyForecastsHelper {
 	  
 	  
 	
-	  public static Example getCityDailyForecast(final String
-	  environment,final LocationData locationData) { final Location location =
-	  LocationHelper.getLocation(environment, locationData); final RestResponse
-	  response =
-	  AccuweatherRest.dailyforecasts().v1(environment).getDetails(location, true);
-	  TestReporter.logAPI(response.getStatusCode() == ResponseCodes.OK,
-	  "failed to get city data", response); final Example example =
-	  response.mapJSONToObject(Example.class);
-	  System.out.println("The DailyForeCastsHelper......" +example); return
-	  parseLocations(example); }
+	  public static Example getCityDailyForecast(final String environment,final LocationData locationData)
+	  {
+		  final Location location = LocationHelper.getLocation(environment, locationData); 
+		  final RestResponse response = AccuweatherRest.dailyforecasts().v1(environment).getDetails(location, true);
+		  TestReporter.logAPI(response.getStatusCode() == ResponseCodes.OK,"failed to get city data", response); 
+		  final Example example = response.mapJSONToObject(Example.class);
+		  System.out.println("The DailyForeCastsHelper......" +example); 
+		  return parseLocations(example); 
+	  }
 	 	    
 	       
 	public static Example getCityDailyForecast(final String environment,
